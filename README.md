@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web Setup Next.js - Design System
 
-## Getting Started
+Este é um projeto Next.js inicializado com [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). O projeto inclui um sistema de design baseado em Tailwind CSS e Windstitch, que fornece componentes reutilizáveis para a interface do usuário.
 
-First, run the development server:
+## Começando
+
+Para iniciar o servidor de desenvolvimento, execute:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra http://localhost:3000 no seu navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Você pode começar a editar a página modificando o arquivo app/page.tsx. A página será atualizada automaticamente à medida que você edita o arquivo.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este projeto usa next/font para otimizar e carregar automaticamente a fonte Geist, uma nova família de fontes para o Vercel.
 
-## Learn More
+### Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+#### Design System
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O arquivo tailwind.config.js contém as configurações personalizadas do Tailwind, que incluem:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- colors - Define as cores personalizadas baseadas na paleta de cada cliente, incluindo cores primárias, secundárias, terciárias e outras cores usadas em vários elementos da interface do usuário.
 
-## Deploy on Vercel
+- fontFamily - Define as fontes personalizadas usadas no projeto, incluindo as fontes Montserrat e Montserrat Alternates.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- screens - Define os breakpoints para o desenvolvimento de páginas responsivas.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- borderRadius - Define um valor de raio de borda para aplicar a elementos específicos.
+
+#### Componentes
+
+O design system inclui uma série de componentes reutilizáveis, tais como:
+
+- Botões: Botões personalizáveis com variantes e ícones.
+- Inputs: Campos de entrada com estilos variados.
+- Cards: Cartões com suporte a títulos, conteúdos e ações.
+- Navbar: Barra de navegação com links e responsividade.
+- Accordion: Acordeão para exibição de conteúdo expansível.
+- Lists: Listas com suporte a diferentes estilos e itemização.
+- Container: Contêiner flexível para layout.
+- Modal: Modal com diferentes opções de posição, sombra e borda.
+- Banner: Banner para exibição de imagens com efeitos de slide.
+- Select: Menu suspenso para seleção de opções.
+
+Cada componente é estilizado usando Tailwind CSS e pode ser personalizado através de variantes.
+
+#### Aprender Mais
+
+Para aprender mais sobre o Next.js, confira os seguintes recursos:
+
+Documentação do Next.js - Aprenda sobre os recursos e a API do Next.js.
+Aprender Next.js - Um tutorial interativo sobre Next.js.
+Você pode conferir o repositório do Next.js no GitHub - seus feedbacks e contribuições são bem-vindos!
+
+#### Deploy no Vercel
+
+A forma mais fácil de implantar sua aplicação Next.js é usar a Plataforma Vercel dos criadores do Next.js.
+
+Confira nossa documentação sobre implantação do Next.js para mais detalhes.
+
+#### Contribuindo
+
+Se você deseja contribuir para este projeto, sinta-se à vontade para abrir um issue ou enviar um pull request. Agradecemos por seu interesse e contribuição!
+
+#### Licença
+
+Este projeto está licenciado sob a MIT License.
+
+Você pode copiar e colar esse conteúdo diretamente no seu arquivo `README.md`. Ajuste os links de contribuição e outros detalhes específicos conforme necessário para corresponder ao seu repositório e projeto.
