@@ -1,13 +1,11 @@
 // app/page.tsx
-'use client'
+
+import Temporizador from "@/components/em-construcao/temporizador/Temporizador";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-
 
 const EntreEmContato = () => {
     return (
@@ -15,79 +13,14 @@ const EntreEmContato = () => {
             <Image src="/img/icon-b-logo.png" alt="logo" width={37} height={35} />
             <div className="font-medium">ENTRE EM CONTATO</div>
             <div>Clique no botão abaixo para ser redirecionado para nosso whatsapp</div>
-            <Link target="_blank" href="https://api.whatsapp.com/send?phone=5569999810662" className={buttonVariants({ variant: "default", size: 'lg' })}>
+            <Link target="_blank" href="https://api.whatsapp.com/send?phone=6934415425" className={buttonVariants({ variant: "default", size: 'lg' })}>
                 <Image src="/img/icon-whatsapp.png" alt="logo" className="mr-2" width={20} height={20} /> CHAMAR NO WHATSAPP
             </Link>
         </div>
     );
 };
 
-const Temporizador = () => {
-    const [timeLeft, setTimeLeft] = useState({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-    });
 
-    useEffect(() => {
-        // Definir a data final como 17 de outubro
-        const targetDate = new Date("2024-11-01T00:00:00");
-
-        // Função para atualizar o tempo restante
-        const updateTimeLeft = () => {
-            const now = new Date();
-            const difference = targetDate.getTime() - now.getTime();
-
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor(
-                    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                );
-                const minutes = Math.floor(
-                    (difference % (1000 * 60 * 60)) / (1000 * 60)
-                );
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                setTimeLeft({ days, hours, minutes, seconds });
-            } else {
-                // Quando a contagem regressiva terminar, parar o temporizador
-                clearInterval(timerInterval);
-            }
-        };
-
-        // Atualizar o tempo restante a cada segundo
-        const timerInterval = setInterval(updateTimeLeft, 1000);
-
-        // Limpar o intervalo quando o componente desmontar
-        return () => clearInterval(timerInterval);
-    }, []);
-
-    return (
-        <div >
-            <div className="px-3 text-white text-center mb-3 flex flex-col md:hidden block">
-                <div className="text-2xl ">Em breve <br /> </div>
-                <span className="text-lg">Novembro</span>
-            </div>
-            <div className="lg:absolute flex text-white items-center flex-col md:flex-row  py-4 md:px-5 space-x-4 md:space-y-4 space-y-0 bg-zinc-500/[.26] rounded-none md:rounded-full w-full bottom-0 right-0">
-
-                <div className="px-3 flex flex-col ml-4 hidden md:block">
-                    <div className="text-2xl ">Em breve <br /> </div>
-                    <span className="text-lg">Novembro</span>
-                </div>
-
-                <div className="md:border-r-2 md:px-2 md:h-[45px]">
-                </div>
-                <div className=" flex space-x-6 ">
-                    <span className="lg:text-4xl text-2xl">{timeLeft.days}</span> dias
-                    <span className="lg:text-4xl text-2xl">{timeLeft.hours}</span> horas
-                    <span className="lg:text-4xl text-2xl">{timeLeft.minutes}</span> min
-                    <span className="lg:text-4xl text-2xl">{timeLeft.seconds}</span> seg
-                </div>
-            </div>
-        </div>
-    );
-};
 
 const AccordionSobre = () => {
     return (
@@ -115,11 +48,11 @@ const Rodape = () => {
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center ">
                 {/* Contato */}
                 <div className="flex space-x-4 md:space-y-0 space-y-3 lg:flex-row flex-col items-center justify-between">
-                    <a href="https://api.whatsapp.com/send?phone=5569999810662" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/icon-whatsapp-azul.png" alt="logo" width={15} height={5} /></span>  <span>96 9.9981-0662</span>
+                    <a href="tel:+556934415425" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
+                        <span><Image src="/img/icon-whatsapp-azul.png" alt="logo" width={15} height={5} /></span>  <span>69 3441-5425</span>
                     </a>
-                    <a href="mailto:ivando@brandanicontabilidade.com" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/icon-email-azul.png" alt="logo" width={15} height={45} /></span> <span>ivando@brandanicontabilidade.com</span>
+                    <a href="mailto:ivandro@brandanicontabilidade.com" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
+                        <span><Image src="/img/icon-email-azul.png" alt="logo" width={15} height={45} /></span> <span>ivandro@brandanicontabilidade.com</span>
                     </a>
                     <a href="https://www.instagram.com/brandanicontabilidade/" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
                         <span><Image src="/img/icon-instagram-azul.png" alt="logo" width={15} height={5} /></span>  <span>@brandanicontabilidade</span>
