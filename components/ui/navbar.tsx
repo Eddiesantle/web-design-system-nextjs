@@ -34,7 +34,7 @@ const Navbar = () => {
     <nav className="navbar flex justify-between items-center p-10  h-[80px] container">
       {/* Logo à esquerda */}
       <div className="">
-        <img src="/img/icon-b-logo.png" alt="Logo Cliente" className="mx-auto md:mx-0" />
+        <img src="/img/em-construcao/icon-b-logo.png" alt="Logo Cliente" className="mx-auto md:mx-0" />
       </div>
 
       {/* Menu Hambúrguer no mobile e menu normal no desktop */}

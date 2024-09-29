@@ -10,11 +10,11 @@ import Link from "next/link";
 const EntreEmContato = () => {
     return (
         <div className="lg:absolute mx-auto text-black top-0 right-0 flex text-center  space-y-5 flex-col items-center justify-center border rounded-lg bg-white p-8 w-[339px] h-[305px] z-10">
-            <Image src="/img/icon-b-logo.png" alt="logo" width={37} height={35} />
+            <Image src="/img/em-construcao/icon-b-logo.png" alt="logo" width={37} height={35} />
             <div className="font-medium">ENTRE EM CONTATO</div>
             <div>Clique no botão abaixo para ser redirecionado para nosso whatsapp</div>
             <Link target="_blank" href="https://api.whatsapp.com/send?phone=6934415425" className={buttonVariants({ variant: "default", size: 'lg' })}>
-                <Image src="/img/icon-whatsapp.png" alt="logo" className="mr-2" width={20} height={20} /> CHAMAR NO WHATSAPP
+                <Image src="/img/em-construcao/icon-whatsapp.png" alt="logo" className="mr-2" width={20} height={20} /> CHAMAR NO WHATSAPP
             </Link>
         </div>
     );
@@ -26,7 +26,7 @@ const AccordionSobre = () => {
     return (
         <div className="flex p-4 md:p-0 ">
             <div className="hidden md:block w-[80px]">
-                <Image src="/img/icon-b-cinza.png" alt="logo" width={60} height={50} />
+                <Image src="/img/em-construcao/icon-b-cinza.png" alt="logo" width={60} height={50} />
             </div>
 
 
@@ -49,13 +49,13 @@ const Rodape = () => {
                 {/* Contato */}
                 <div className="flex space-x-4 md:space-y-0 space-y-3 lg:flex-row flex-col items-center justify-between">
                     <a href="tel:+556934415425" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/icon-whatsapp-azul.png" alt="logo" width={15} height={5} /></span>  <span>69 3441-5425</span>
+                        <span><Image src="/img/em-construcao/icon-whatsapp-azul.png" alt="logo" width={15} height={5} /></span>  <span>69 3441-5425</span>
                     </a>
                     <a href="mailto:ivandro@brandanicontabilidade.com" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/icon-email-azul.png" alt="logo" width={15} height={45} /></span> <span>ivandro@brandanicontabilidade.com</span>
+                        <span><Image src="/img/em-construcao/icon-email-azul.png" alt="logo" width={15} height={45} /></span> <span>ivandro@brandanicontabilidade.com</span>
                     </a>
                     <a href="https://www.instagram.com/brandanicontabilidade/" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/icon-instagram-azul.png" alt="logo" width={15} height={5} /></span>  <span>@brandanicontabilidade</span>
+                        <span><Image src="/img/em-construcao/icon-instagram-azul.png" alt="logo" width={15} height={5} /></span>  <span>@brandanicontabilidade</span>
                     </a>
                 </div>
 
@@ -72,7 +72,7 @@ export default function EmConstrucao() {
     return (
         <>
             <div className="font-[family-name:var(--font-geist-sans)]">
-                <div className="md:bg-cover bg-center lg:h-screen flex flex-col justify-between" style={{ backgroundImage: `url('img/banner-fundo.png')` }}>
+                <div className="md:bg-cover bg-center lg:h-screen flex flex-col justify-between" style={{ backgroundImage: `url('img/em-construcao/banner-fundo.png')` }}>
                     {/* Container Principal */}
                     <div className="md:container md:mx-auto flex-grow flex items-center justify-center">
                         {/* Grid Responsiva */}
@@ -80,7 +80,7 @@ export default function EmConstrucao() {
                             {/* Coluna 1 */}
                             <div className="col-span-12 md:col-span-12 ">
                                 <div className="px-8 my-8 text-white">
-                                    <Image src="/img/logo-branca.png" alt="logo" width={388} height={114} />
+                                    <Image src="/img/em-construcao/logo-branca.png" alt="logo" width={388} height={114} />
 
                                 </div>
 

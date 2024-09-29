@@ -46,24 +46,24 @@ const Feedback = () => {
     const totalSlides = Math.ceil(testimonials.length / 2);
 
     // Navegar para o próximo slide
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 2) % testimonials.length);
-    };
+    // const nextSlide = () => {
+    //     setCurrentIndex((prevIndex) => (prevIndex + 2) % testimonials.length);
+    // };
 
     // Navegar para o slide anterior
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex - 2 < 0 ? testimonials.length - 2 : prevIndex - 2
-        );
-    };
+    // const prevSlide = () => {
+    //     setCurrentIndex((prevIndex) =>
+    //         prevIndex - 2 < 0 ? testimonials.length - 2 : prevIndex - 2
+    //     );
+    // };
 
     // Navegar diretamente para um slide específico
-    const goToSlide = (index: any) => {
+    const goToSlide = (index: number) => {
         setCurrentIndex(index * 2);
     };
 
     return (
-        <div className="bg-[#00569C] text-white py-10">
+        <div className="bg-[#00569C] text-white pb-16 md:pt-[250px]">
             <ContainerDefault>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8">
                     {/* Seção de título e descrição */}
@@ -81,7 +81,7 @@ const Feedback = () => {
                         <div className="flex md:flex-row flex-col gap-6 ">
                             {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial) => (
                                 <div key={testimonial.id} className="bg-white text-black rounded-lg shadow-lg p-6 md:w-[250px]  md:h-[200px]">
-                                    <p className="italic">"{testimonial.text}"</p>
+                                    <p className="italic">{testimonial.text}</p>
                                     <div className="mt-4 text-right font-semibold">— {testimonial.name}</div>
                                 </div>
                             ))}

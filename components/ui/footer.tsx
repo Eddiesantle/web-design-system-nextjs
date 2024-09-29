@@ -8,7 +8,7 @@ const Footer = () => {
                     {/* Logo e Social Links */}
                     <div className="flex flex-col gap-4 col-span-2 ">
                         <div className="mb-4">
-                            <img src="/img/logo-branca.png" alt="Logo" className="h-20" />
+                            <img src="/img/em-construcao/logo-branca.png" alt="Logo" className="h-20" />
                         </div>
                         <div className="flex  space-x-6">
                             <a href="#" aria-label="Instagram" className="hover:text-gray-400">
@@ -57,8 +57,8 @@ const Footer = () => {
                 </div>
 
                 {/* Footer Inferior */}
-                <div className="border-t border-gray-400 py-4 mt-4">
-                    <p className="mb-2">Sobre a Empresa</p>
+                <div className="border-t border-gray-400 py-4 mt-4 text-sm">
+                    <p className="mb-2 md:w-[75%] ">Fundada em 1983, empresa atua no ramo de contabilidade empresarial (Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário e planejamento sucessório.</p>
                     <p className="mb-2">Endereço: Rua Exemplo, 123, Cidade, Estado</p>
                     <p>© 2024 Brandani Contabilidade. Todos os direitos reservados.</p>
                 </div>
