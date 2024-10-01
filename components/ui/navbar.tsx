@@ -51,10 +51,10 @@ const Navbar = () => {
       <NavigationMenu.Root className={`navbar-menu flex gap-10 items-center ${isOpen ? 'block' : 'hidden'} md:flex`}>
         <NavigationMenu.List className="navbar-menu text-black flex gap-10 items-center  ">
           <NavigationMenu.Item>
-            <LinkItem href="/">Home</LinkItem>
+            <LinkItem href="/home">Home</LinkItem>
           </NavigationMenu.Item>
           <NavigationMenu.Item>
-            <LinkItem href="/about">Sobre</LinkItem>
+            <LinkItem href="/sobre">Sobre</LinkItem>
           </NavigationMenu.Item>
           <NavigationMenu.Item>
             <LinkItem href="/services">Serviços</LinkItem>

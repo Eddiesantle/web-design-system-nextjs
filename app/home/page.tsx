@@ -2,7 +2,7 @@
 import { ContainerDefault } from '@/components/layout/containerDefault';
 import { Layout } from '@/components/layout/layout';
 import Feedback from '@/components/one-page/feedback';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -111,6 +111,74 @@ const LatestInstagramPosts = () => {
     );
 };
 
+const CardsServicesList = ({ imageUrl, postUrl, description, title }: { imageUrl: string, postUrl: string, title: string, description: string }) => {
+    return (
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden py-10">
+            <Link href={postUrl} target="_blank">
+                <div>
+                    <Image src={imageUrl} alt={description} width={400} height={400} className="w-20 h-20 object-cover rounded-full mx-auto" />
+                </div>
+                <div className="flex flex-col gap-4 p-4">
+                    <p className="text-gray-600 font-bold">{title}</p>
+
+                    <p className="text-gray-600">{description}</p>
+                </div>
+            </Link>
+        </div>
+    );
+};
+
+const OurServices = () => {
+    const posts = [
+        {
+            imageUrl: '/img/em-construcao/banner-fundo.png',
+            postUrl: 'https://www.instagram.com/brandani_contabilidade',
+            title: 'Contabilidade Rural e Empresarial',
+            description: 'Confiança e expertise para gerenciar seu negócio.',
+        },
+        {
+            imageUrl: '/img/em-construcao/banner-fundo.png',
+            postUrl: 'https://www.instagram.com/brandani_contabilidade',
+            title: 'Contabilidade Rural e Empresarial',
+            description: 'Confiança e expertise para gerenciar seu negócio.',
+        },
+        {
+            imageUrl: '/img/em-construcao/banner-fundo.png',
+            postUrl: 'https://www.instagram.com/brandani_contabilidade',
+            title: 'Contabilidade Rural e Empresarial',
+            description: 'Confiança e expertise para gerenciar seu negócio.',
+        },
+    ];
+
+    return (
+        <div className="bg-[#0D4259] text-white md:pt-[50px] mb-[250px]">
+            <ContainerDefault>
+
+                <div className="mx-auto text-center">
+                    <h2 className="text-3xl">SIMPLIFICAMOS SUA CONTABILIDADE</h2>
+                    <p className=" mb-10">Nossos Serviços</p>
+
+                    <div className="relative md:h-[130px] md:w-[800px] mx-auto ">
+                        <div className='md:absolute grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 '>
+                            {posts.map((post, index) => (
+                                <CardsServicesList
+                                    key={index}
+                                    title={post.title}
+                                    imageUrl={post.imageUrl}
+                                    postUrl={post.postUrl}
+                                    description={post.description}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </ContainerDefault>
+        </div>
+
+
+    );
+};
+
 const BannerImageContent = () => {
     return (
         <div className="md:bg-cover bg-center  flex flex-col justify-between" style={{ backgroundImage: `url('img/em-construcao/banner-fundo.png')` }}>
@@ -154,12 +222,94 @@ const BannerImageContent = () => {
     )
 }
 
+const AboutUs = () => {
+    return (
+        <ContainerDefault>
+            <div className="grid grid-cols-1 lg:grid-cols-8 justify-center py-14">
+                <div className="grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto gap-8 ">
+                    <div className='flex flex-col gap-6'>
+                        <div className="text-sm">SOBRE NÓS</div>
+                        <div className="text-2xl">Confie em <br /> nossos melhores <br /> contadores</div>
+                        <div>
+                            Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.
+                        </div>
+                        <div>
+                            <div className='flex gap-5'>
+                                <Image
+                                    className={`rounded-full `}
+                                    src="/img/em-construcao/banner-fundo.png"
+                                    alt="pessoas"
+                                    width={30}
+                                    height={50}
+                                    priority
+                                />
+                                Altos padrões de integridades
+                            </div>
+                            <div className='flex gap-5'>
+                                <Image
+                                    className={`rounded-full `}
+                                    src="/img/em-construcao/banner-fundo.png"
+                                    alt="pessoas"
+                                    width={30}
+                                    height={50}
+                                    priority
+                                />
+                                Altos padrões de integridades
+                            </div>
+                            <div className='flex gap-5'>
+                                <Image
+                                    className={`rounded-full `}
+                                    src="/img/em-construcao/banner-fundo.png"
+                                    alt="pessoas"
+                                    width={30}
+                                    height={50}
+                                    priority
+                                />
+                                Altos padrões de integridades
+                            </div>
+                            <div className='flex gap-5'>
+                                <Image
+                                    className={`rounded-full `}
+                                    src="/img/em-construcao/banner-fundo.png"
+                                    alt="pessoas"
+                                    width={30}
+                                    height={50}
+                                    priority
+                                />
+                                Altos padrões de integridades
+                            </div>
+                        </div>
+                        <div className='flex flex-row gap-3 mt-4'>
+
+                            <Link href="/sobre" className={buttonVariants({ variant: "default" })}>Sobre a Brandini</Link>
+                            <Button>Preciso de um contatos</Button>
+                        </div>
+                    </div>
+                    <div className='justify-center md:justify-start'>
+                        <Image
+                            className="rounded-lg h-[380px]"
+                            src="/img/em-construcao/banner-fundo.png"
+                            alt="pessoas unidas"
+                            width={350}
+                            height={214}
+                            priority
+                        />
+                    </div>
+                </div>
+            </div>
+
+        </ContainerDefault>
+    )
+
+}
+
 export default function Home() {
     return (
         <Layout>
-            <h1 className="text-3xl font-bold text-center">Welcome to Brandani Contabilidade</h1>
-            <p className="mt-4 text-center">Fundada em 1983, a empresa atua no ramo de contabilidade empresarial.</p>
 
+            <AboutUs />
+
+            <OurServices />
 
             <ContentsSevices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-[#29AAE1] font-semibold'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='imposto de renda imposto de renda imposto de renda imposto de renda imposto de renda imposto de renda' srcImage='/img/em-construcao/banner-fundo.png' />
 
@@ -173,6 +323,8 @@ export default function Home() {
 
             {/* Como adicionar um Feed do Instagram na sua aplicação React - https://www.youtube.com/watch?v=WaMzfDN66MU */}
             <LatestInstagramPosts />
+
+
 
             <Feedback />
         </Layout>

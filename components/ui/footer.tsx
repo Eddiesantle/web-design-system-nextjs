@@ -60,7 +60,6 @@ const Footer = () => {
                 <div className="border-t border-gray-400 py-4 mt-4 text-sm">
                     <p className="mb-2 md:w-[75%] ">Fundada em 1983, empresa atua no ramo de contabilidade empresarial (Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário e planejamento sucessório.</p>
                     <p className="mb-2">Endereço: Rua Exemplo, 123, Cidade, Estado</p>
-                    <p>© 2024 Brandani Contabilidade. Todos os direitos reservados.</p>
                 </div>
                 <div className="text-center text-sm">
                     <p>© 2024 Brandani Contabilidade. Todos os direitos reservados.</p>
