@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { buttonVariants } from './button';
 import { CaretDownIcon } from '@radix-ui/react-icons';
 import classNames from 'classnames';
+import Image from 'next/image';
 
 // Define the types for the Link component
 interface CustomLinkProps extends LinkProps {
@@ -62,17 +63,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  const toggleServicesMenu = () => {
-    setIsServicesOpen(!isServicesOpen);
-  };
-
   return (
     <div className="container mx-auto p-2">
       <nav className="navbar flex justify-between items-center py-4 md:py-6 h-[80px]">
 
         {/* Logo à esquerda */}
         <div className="flex items-center">
-          <img src="/img/em-construcao/icon-b-logo.png" alt="Logo Cliente" className="h-10 w-10 mx-auto md:mx-0" />
+          <Image src="/img/em-construcao/icon-b-logo.png" alt="Logo Cliente" className="h-10 w-10 mx-auto md:mx-0" />
         </div>
 
         {/* Menu Hambúrguer no mobile e menu normal no desktop */}
