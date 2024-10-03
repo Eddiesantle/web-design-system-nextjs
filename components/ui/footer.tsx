@@ -1,74 +1,115 @@
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { ContainerDefault } from "../layout/containerDefault";
 
-const Footer = () => {
+interface SocialLink {
+    href: string;
+    label: string;
+}
+
+interface ContactInfo {
+    phone: string;
+    whatsapp: string;
+    email: string;
+}
+
+interface FooterSection {
+    title: string;
+    links: { label: string; href: string }[];
+}
+
+interface FooterProps {
+    logoSrc: string;
+    socialLinks: SocialLink[];
+    contactInfo: ContactInfo;
+    sections: FooterSection[];
+    companyDescription: string;
+    address: string;
+    copyright: string;
+}
+
+const Footer: React.FC<FooterProps> = ({
+    logoSrc,
+    socialLinks,
+    contactInfo,
+    sections,
+    companyDescription,
+    address,
+    copyright
+}) => {
     return (
         <footer className="bg-[#0D4259] text-white py-6">
             <ContainerDefault>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8 py-8">
-                    {/* Logo e Social Links */}
-                    <div className="flex flex-col gap-4 col-span-2 ">
-                        <div className="mb-4">
-                            <img src="/img/em-construcao/logo-branca.png" alt="Logo" className="h-20" />
-                        </div>
-                        <div className="flex  space-x-6">
-                            <a href="#" aria-label="Instagram" className="hover:text-gray-400">
-                                Instagram
-                            </a>
-                            <a href="#" aria-label="LinkedIn" className="hover:text-gray-400">
-                                LinkedIn
-                            </a>
-                            <a href="#" aria-label="Facebook" className="hover:text-gray-400">
-                                Facebook
-                            </a>
-                        </div>
-                        <div>
-                            <p>Telefone: (XX) XXXX-XXXX</p>
-                            <p>Whatsapp: (XX) XXXXX-XXXX</p>
-                            <p>Email: contato@brandani.com.br</p>
-                        </div>
-                    </div>
-
-
-                    {/* Links Rápidos */}
-                    <div className="">
-                        <h4 className="text-lg  mb-4">A EMPRESA</h4>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-gray-400">A Empresa</a></li>
-                            <li><a href="#" className="hover:text-gray-400">Contabilidade</a></li>
-                            <li><a href="#" className="hover:text-gray-400">Segurança</a></li>
-                        </ul>
-                    </div>
-                    <div className="">
-                        <h4 className="text-lg  mb-4">CONTABILIDADE</h4>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-gray-400">A Empresa</a></li>
-                            <li><a href="#" className="hover:text-gray-400">Contabilidade</a></li>
-                            <li><a href="#" className="hover:text-gray-400">Segurança</a></li>
-                        </ul>
-                    </div>
-                    <div className="">
-                        <h4 className="text-lg  mb-4">SEGURANÇA</h4>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-gray-400">A Empresa</a></li>
-                            <li><a href="#" className="hover:text-gray-400">Contabilidade</a></li>
-                            <li><a href="#" className="hover:text-gray-400">Segurança</a></li>
-                        </ul>
-                    </div>
+                    <CompanyInfo logoSrc={logoSrc} socialLinks={socialLinks} contactInfo={contactInfo} />
+                    {sections.map((section, index) => (
+                        <FooterLinks key={index} {...section} />
+                    ))}
                 </div>
-
-                {/* Footer Inferior */}
-                <div className="border-t border-gray-400 py-4 mt-4 text-sm">
-                    <p className="mb-2 md:w-[75%] ">Fundada em 1983, empresa atua no ramo de contabilidade empresarial (Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário e planejamento sucessório.</p>
-                    <p className="mb-2">Endereço: Rua Exemplo, 123, Cidade, Estado</p>
-                </div>
-                <div className="text-center text-sm">
-                    <p>© 2024 Brandani Contabilidade. Todos os direitos reservados.</p>
-
-                </div></ContainerDefault>
-
-
+                <FooterBottom
+                    companyDescription={companyDescription}
+                    address={address}
+                    copyright={copyright}
+                />
+            </ContainerDefault>
         </footer>
     );
 };
+
+const CompanyInfo: React.FC<{
+    logoSrc: string;
+    socialLinks: SocialLink[];
+    contactInfo: ContactInfo;
+}> = ({ logoSrc, socialLinks, contactInfo }) => (
+    <div className="flex flex-col gap-4 col-span-2">
+        <div className="mb-4">
+            <Image src={logoSrc} alt="Logo" width={80} height={80} />
+        </div>
+        <div className="flex space-x-6">
+            {socialLinks.map((link, index) => (
+                <Link key={index} href={link.href} aria-label={link.label} className="hover:text-gray-400">
+                    {link.label}
+                </Link>
+            ))}
+        </div>
+        <div className="flex flex-col">
+            <p>Telefone: {contactInfo.phone}</p>
+            <p>Whatsapp: {contactInfo.whatsapp}</p>
+            <p>Email: {contactInfo.email}</p>
+        </div>
+    </div>
+);
+
+const FooterLinks: React.FC<FooterSection> = ({ title, links }) => (
+    <div>
+        <h4 className="text-lg mb-4">{title}</h4>
+        <ul className="space-y-2">
+            {links.map((link, index) => (
+                <li key={index}>
+                    <Link href={link.href} className="hover:text-gray-400">
+                        {link.label}
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
+
+const FooterBottom: React.FC<{
+    companyDescription: string;
+    address: string;
+    copyright: string;
+}> = ({ companyDescription, address, copyright }) => (
+    <>
+        <div className="border-t border-gray-400 py-4 mt-4 text-sm">
+            <p className="mb-2 md:w-[75%]">{companyDescription}</p>
+            <p className="mb-2">{address}</p>
+        </div>
+        <div className="text-center text-sm">
+            <p>{copyright}</p>
+        </div>
+    </>
+);
 
 export default Footer;

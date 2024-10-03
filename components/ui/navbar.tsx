@@ -61,7 +61,7 @@ ListItem.displayName = 'ListItem'; // Defina o displayName para evitar erros no 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
 
   return (
     <div className="container mx-auto p-2">
@@ -69,7 +69,7 @@ const Navbar = () => {
 
         {/* Logo à esquerda */}
         <div className="flex items-center">
-          <Image src="/img/em-construcao/icon-b-logo.png" alt="Logo Cliente" className="h-10 w-10 mx-auto md:mx-0" />
+          <Image src="/img/em-construcao/icon-b-logo.png" alt="Logo Cliente" width={37} height={35} className="mx-auto md:mx-0" />
         </div>
 
         {/* Menu Hambúrguer no mobile e menu normal no desktop */}

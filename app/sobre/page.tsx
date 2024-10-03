@@ -1,6 +1,7 @@
 import { ContainerDefault } from "@/components/layout/containerDefault";
 import { Layout } from "@/components/layout/layout";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import InformationCountsAdvantages from "@/components/ui/informationCountsAdvantages";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,32 +15,6 @@ interface ContentsServicesProps {
     buttonLabel?: string
 }
 
-const InformationCountsAdvantages = () => {
-    return (
-        <ContainerDefault>
-            <div className="flex justify-center">
-                <div className="flex bg-[#004983] text-white gap-6 rounded-[30px] py-6 px-12">
-                    <div className="flex flex-col text-center md:w-[150px]">
-                        <div className="text-sm">Experiencia</div>
-                        <div className="text-3xl font-semibold">+40</div>
-                        <div className="text-sm">anos</div>
-                    </div>
-
-                    <div className="flex flex-col text-center md:w-[150px]">
-                        <div className="text-3xl font-semibold">50 mil</div>
-                        <div className="text-sm">em redução de imposto e enquadramento</div>
-                    </div>
-                    <div className="flex flex-col text-center md:w-[150px]">
-                        <div className="text-sm">Mais de</div>
-                        <div className="text-3xl font-semibold">10.2k</div>
-                        <div className="text-sm">clientes atendidos</div>
-                    </div>
-                </div>
-
-            </div>
-        </ContainerDefault>
-    )
-}
 
 const AboutUs = () => {
     return (
@@ -114,24 +89,33 @@ const ContentsSevices: React.FC<ContentsServicesProps> = ({ name, about, details
     );
 };
 
-const BannerAbout = () => {
-    return (
-        <ContainerDefault >
-            <div className="md:bg-cover bg-center h-[350px] w-full  rounded-lg mb-12" style={{ backgroundImage: `url('img/em-construcao/banner-fundo.png')` }}></div>
-        </ContainerDefault>
-    )
-}
 
+const stats = [
+    {
+        title: "Experiencia",
+        value: "+40",
+        subtitle: "anos"
+    },
+    {
+        value: "50 mil",
+        subtitle: "em redução de imposto e enquadramento"
+    },
+    {
+        title: "Mais de",
+        value: "10.2k",
+        subtitle: "clientes atendidos"
+    }
+];
 
 export default function Sobre() {
     return (
         <Layout>
             <AboutUs />
-            <InformationCountsAdvantages />
+            <InformationCountsAdvantages stats={stats} />
             <ContentsSevices about={`<span class='text-[#29AAE1] font-semibold'>Nossa</span> Missão,<br> Visão e Valores`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio. Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.' srcImage='/img/em-construcao/banner-fundo.png' order />
             <ContentsSevices details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio. Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.' srcImage='/img/em-construcao/banner-fundo.png' />
             <ContentsSevices details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio. Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.' srcImage='/img/em-construcao/banner-fundo.png' buttonLink="sobre" buttonLabel="Preciso de um contador" order />
-            <BannerAbout />
+
         </Layout>
     )
 }

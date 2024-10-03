@@ -15,6 +15,35 @@ const NavbarRange = () => {
     </div>)
 }
 
+const socialLinks = [{
+    href: "Instagram",
+    label: "Instagram"
+}, {
+    href: "Instagram",
+    label: "LinkedIn"
+}, {
+    href: "Instagram",
+    label: "Facebook"
+}]
+
+const contactInfo = {
+    phone: "(XX) XXXX-XXXX",
+    whatsapp: "(XX) XXXX-XXXX",
+    email: "contato@brandani.com.br"
+}
+
+const section = [{
+    title: "A EMPRESA",
+    links: [{ label: "A Empresa", href: "string" }, { label: "Contabilidade", href: "string" }, { label: "Segurança", href: "string" }]
+}, {
+    title: "CONTABILIDADE",
+    links: [{ label: "A Empresa", href: "string" }, { label: "Contabilidade", href: "string" }, { label: "Segurança", href: "string" }]
+}, {
+    title: "SEGURANÇA",
+    links: [{ label: "A Empresa", href: "string" }, { label: "Contabilidade", href: "string" }, { label: "Segurança", href: "string" }]
+},]
+
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="flex flex-col min-h-screen">
@@ -28,7 +57,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </main>
 
 
-            <Footer />
+            <Footer copyright='© 2024 Brandani Contabilidade. Todos os direitos reservados.' companyDescription='Fundada em 1983, empresa atua no ramo de contabilidade empresarial (Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário e planejamento sucessório.' address='Endereço: Rua Exemplo, 123, Cidade, Estado' socialLinks={socialLinks} contactInfo={contactInfo} logoSrc='/img/em-construcao/logo-branca.png' sections={section} />
         </div>
     );
 };
