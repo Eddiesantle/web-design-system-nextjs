@@ -50,7 +50,7 @@ const ContentSection: React.FC<Omit<AboutUsHomeProps, 'imageSrc' | 'imageAlt'>> 
 }) => (
     <div className='flex flex-col gap-6'>
         <div className="text-sm">{title}</div>
-        <div className="text-2xl">{subtitle}</div>
+        <div className="text-3xl">{subtitle}</div>
         <div>{description}</div>
         <FeatureList features={features} />
         <ActionButtons />
@@ -58,15 +58,15 @@ const ContentSection: React.FC<Omit<AboutUsHomeProps, 'imageSrc' | 'imageAlt'>> 
 );
 
 const FeatureList: React.FC<{ features: string[] }> = ({ features }) => (
-    <div>
+    <div className='flex flex-col gap-y-2'>
         {features.map((feature, index) => (
-            <div key={index} className='flex gap-5'>
+            <div key={index} className='flex gap-4 font-medium'>
                 <Image
                     className="rounded-full"
-                    src="/img/em-construcao/banner-fundo.png"
+                    src="/img/home/check-verified.svg"
                     alt="feature icon"
-                    width={30}
-                    height={50}
+                    width={22}
+                    height={22}
                     priority
                 />
                 {feature}
@@ -77,8 +77,8 @@ const FeatureList: React.FC<{ features: string[] }> = ({ features }) => (
 
 const ActionButtons: React.FC = () => (
     <div className='flex flex-row gap-3 mt-4'>
-        <Link href="/sobre" className={buttonVariants({ variant: "default" })}>Sobre a Brandini</Link>
-        <Link href="/contato" className={buttonVariants({ variant: "default" })}>Preciso de um contato</Link>
+        <Link href="/sobre" className={buttonVariants({ variant: "secondary", size: 'lg' })}>Sobre a Brandini</Link>
+        <Link href="/contato" className={buttonVariants({ variant: "outline", size: 'lg' })}>Preciso de um contato</Link>
     </div>
 );
 
@@ -88,11 +88,11 @@ const ImageSection: React.FC<Pick<AboutUsHomeProps, 'imageSrc' | 'imageAlt'>> = 
 }) => (
     <div className='justify-center md:justify-start'>
         <Image
-            className="rounded-lg h-[380px]"
+            className="rounded-lg "
             src={imageSrc}
             alt={imageAlt}
-            width={350}
-            height={214}
+            width={701}
+            height={100}
             priority
         />
     </div>

@@ -22,7 +22,7 @@ const BriefContentServices: React.FC<ContentsServicesProps> = ({
 }) => {
     return (
         <ContainerDefault>
-            <div className="grid grid-cols-1 lg:grid-cols-8 justify-center py-14">
+            <div className="grid grid-cols-1 lg:grid-cols-8 justify-center py-14 ">
                 <div className="grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto gap-8">
                     <ImageSection srcImage={srcImage} name={name} order={order} />
                     <TextSection name={name} about={about} details={details} order={order} />
@@ -42,8 +42,8 @@ const ImageSection: React.FC<Pick<ContentsServicesProps, 'srcImage' | 'name' | '
             className={`rounded-lg ${order ?? "mx-auto"}`}
             src={srcImage}
             alt={name}
-            width={350}
-            height={214}
+            width={362}
+            height={375}
             priority
         />
     </div>
@@ -55,12 +55,12 @@ const TextSection: React.FC<Omit<ContentsServicesProps, 'srcImage'>> = ({
     details,
     order
 }) => (
-    <div className={`flex flex-col justify-center text-center md:text-left gap-6 lg:w-[330px] ${order && "mx-auto"}`}>
+    <div className={`flex flex-col justify-center text-center md:text-left gap-6 lg:w-[360px] ${order && "mx-auto"}`}>
         <p className="text-sm">{name}</p>
-        <div className="text-2xl" dangerouslySetInnerHTML={{ __html: about }} />
+        <div className="text-3xl" dangerouslySetInnerHTML={{ __html: about }} />
         <p className="text-md">{details}</p>
         <div>
-            <Link href="/contato" className={buttonVariants({ variant: "default" })}>Preciso de um contato</Link>
+            <Link href="/contato" className={buttonVariants({ variant: "tertiary", size: 'lg' })}>Saber mais</Link>
         </div>
     </div>
 );

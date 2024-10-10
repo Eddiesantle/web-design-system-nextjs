@@ -16,7 +16,7 @@ const InformationCountsAdvantages: React.FC<InformationCountsAdvantagesProps> = 
     return (
         <ContainerDefault>
             <div className="flex justify-center">
-                <div className="flex bg-[#004983] text-white gap-6 rounded-[30px] py-6 px-12">
+                <div className="flex bg-gradient-to-r from-[#004780] to-[#0060AD] text-white gap-6 rounded-[30px] py-6 px-12">
                     {stats.map((stat, index) => (
                         <StatDisplay key={index} {...stat} />
                     ))}

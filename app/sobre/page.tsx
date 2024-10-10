@@ -25,25 +25,25 @@ const AboutUs = () => {
                     <div className='justify-center md:justify-start'>
                         <Image
                             className="rounded-lg h-[380px]"
-                            src="/img/em-construcao/banner-fundo.png"
+                            src="/img/home/pessoas-mesa-reuniao.png"
                             alt="pessoas unidas"
-                            width={350}
-                            height={214}
+                            width={701}
+                            height={100}
                             priority
                         />
                     </div>
                     <div className='flex flex-col gap-6 lg:w-[330px]'>
                         <div className="text-sm">BRANDANI CONTABILIDADE</div>
-                        <div className="text-2xl"><span className="font-semibold">Sobre</span><br /> Nosso Escritório</div>
+                        <div className="text-3xl"><span className="font-semibold text-secondary">Sobre</span><br /> Nosso Escritório</div>
                         <div>
-                            Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.
+                            Fundada em 1983, empresa atua no ramo de contabilidade empresarial Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário, planejamento sucessório.
                         </div>
                         <div>
-                            Seu quadro de colaboradores é composto por contadores e especialisatas na área contábil
+                            Seu quadro de colaboradores é composto por contadores e especialistas na área contábil.
                         </div>
                         <div className='flex flex-row gap-3 mt-4'>
 
-                            <Link href="/sobre" className={buttonVariants({ variant: "default" })}>Preciso de um contatos</Link>
+                            <Link href="/sobre" className={buttonVariants({ variant: "tertiary" })}>Preciso de um contatos</Link>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@ const ContentsSevices: React.FC<ContentsServicesProps> = ({ name, about, details
                         <p className="text-md">{details}</p>
                         {buttonLink && (
                             <div className="mt-4">
-                                <Link href={buttonLink} className={buttonVariants({ variant: "default" })}>{buttonLabel}</Link>
+                                <Link href={buttonLink} className={buttonVariants({ variant: "tertiary" })}>{buttonLabel}</Link>
                             </div>
                         )}
                     </div>
@@ -97,7 +97,7 @@ const stats = [
         subtitle: "anos"
     },
     {
-        value: "50 mil",
+        value: "R$ 50 mil",
         subtitle: "em redução de imposto e enquadramento"
     },
     {
@@ -107,14 +107,47 @@ const stats = [
     }
 ];
 
+interface Info {
+    title: string
+    description: string
+}
+interface MissionVisionPrinciplesProps {
+    missionVisionPrinciplesProps: Info[]
+}
+
+const missionVisionPrinciplesMock = [{ title: "MISSÃO", description: "Entregar os melhores serviços, fortalecendo parcerias duradouras." },
+{ title: "VISÃO", description: "Gerar transformações de pessoas e negócios" },
+{ title: "VALORES", description: "Dedicação total para alcançar metas e resultados, excelência nos serviços oferecidos, colaboração eficiente em busca de objetivos comuns." }]
+
+const MissionVisionPrinciples: React.FC<MissionVisionPrinciplesProps> = ({ missionVisionPrinciplesProps }) => {
+    return (
+        <ContainerDefault>
+            <div className="flex flex-col mx-auto md:w-[80%] gap-6 justify-center">
+
+                {missionVisionPrinciplesProps.map((info, index) => (
+                    <div className="flex bg-gradient-to-r from-[#004780] to-[#0060AD] text-white gap-6 rounded-lg py-10 px-12" key={index}>
+                        <div className="flex md:flex-row flex-col gap-2">
+                            <div className="text-sm w-[100px]">{info.title}</div>
+                            <div className="text-sm">{info.description}</div>
+                        </div>
+
+                    </div>
+                ))}
+            </div>
+        </ContainerDefault>
+    )
+
+}
+
 export default function Sobre() {
     return (
         <Layout>
             <AboutUs />
             <InformationCountsAdvantages stats={stats} />
-            <ContentsSevices about={`<span class='text-[#29AAE1] font-semibold'>Nossa</span> Missão,<br> Visão e Valores`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio. Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.' srcImage='/img/em-construcao/banner-fundo.png' order />
-            <ContentsSevices details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio. Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.' srcImage='/img/em-construcao/banner-fundo.png' />
-            <ContentsSevices details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio. Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.' srcImage='/img/em-construcao/banner-fundo.png' buttonLink="sobre" buttonLabel="Preciso de um contador" order />
+            <ContentsSevices about={`<span class='text-secondary font-semibold'>Nossa</span> Missão,<br> Visão e Valores`} details='O código de conduta e ética da empresa, é uma orientação para que todos os colaboradores tomem decisões baseadas nos valores que a empresa compartilha, reduzindo o risco de interpretações subjetivas quanto aos aspectos morais, éticos e legais concernentes às relações de trabalho.' srcImage='/img/em-construcao/banner-fundo.png' order />
+            <MissionVisionPrinciples missionVisionPrinciplesProps={missionVisionPrinciplesMock} />
+            <ContentsSevices details='A Brandani Contabilidade conduz suas atividades e negócios conforme os padrões éticos, respeitando as leis e normas aplicáveis, incluindo, sem limitação, normas de saúde e segurança, legislação trabalhista e fiscal, sendo esta uma prerrogativa de atuação para os seus colaboradores e parceiros.' srcImage='/img/em-construcao/banner-fundo.png' />
+            <ContentsSevices details='Prezamos por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los.' srcImage='/img/em-construcao/banner-fundo.png' buttonLink="sobre" buttonLabel="Preciso de um contador" order />
 
         </Layout>
     )

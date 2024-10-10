@@ -5,6 +5,7 @@ import AboutUsHome from '@/components/ui/aboutUsHome';
 import BgEthicalConduct from '@/components/ui/bgEthicalConduct';
 import BriefContentServices from '@/components/ui/briefContentServices';
 import LatestInstagramPosts from '@/components/ui/latestInstagramPosts';
+import Image from 'next/image';
 import React from 'react';
 
 
@@ -28,22 +29,22 @@ const instagramPosts = [
 
 const services = [
     {
-        imageUrl: '/img/em-construcao/banner-fundo.png',
+        imageUrl: '/img/home/icons8-contabilidade-100.png',
         postUrl: 'https://example.com/service1',
-        title: 'Contabilidade Empresarial',
-        description: 'Serviços contábeis especializados para sua empresa.'
+        title: 'Contabilidade Rural e Empresarial',
+        description: 'Confiança e expertise para gerenciar seu negócio.'
     },
     {
-        imageUrl: '/img/em-construcao/banner-fundo.png',
+        imageUrl: '/img/home/icons8-imposto-96.png',
         postUrl: 'https://example.com/service1',
-        title: 'Contabilidade Empresarial',
-        description: 'Serviços contábeis especializados para sua empresa.'
+        title: 'Planejamento Tributário e Sucessório',
+        description: 'Otimizamos sua carga fiscal para aumentar a lucratividade.'
     },
     {
-        imageUrl: '/img/em-construcao/banner-fundo.png',
+        imageUrl: '/img/home/icons8-companhia-64.png',
         postUrl: 'https://example.com/service1',
-        title: 'Contabilidade Empresarial',
-        description: 'Serviços contábeis especializados para sua empresa.'
+        title: 'Pequenas Empresas',
+        description: 'Soluções inteligentes para produtores rurais, empresas de qualquer porte e clínicas.'
     },
     // ... more services
 ];
@@ -53,64 +54,78 @@ const testimonials = [
         id: 1,
         text: "O serviço prestado pela Brandani Contabilidade foi excepcional. A equipe é extremamente atenciosa e eficiente.",
         name: "João Silva",
+        officer: "Sócio Presidente"
     },
     {
         id: 2,
         text: "Profissionais qualificados e prontos para ajudar em todas as necessidades contábeis da minha empresa.",
         name: "Maria Souza",
+        officer: "Diretora Comercial"
     },
     {
         id: 3,
         text: "Sempre atenciosos e rápidos no atendimento. Recomendo a Brandani Contabilidade para todos os meus colegas!",
         name: "Carlos Lima",
+        officer: "Gerente de Vendas"
     },
     {
         id: 4,
         text: "Excelente serviço e ótima relação custo-benefício. Equipe preparada e confiável.",
         name: "Fernanda Dias",
+        officer: "Assistente de Contabilidade"
     },
     {
         id: 3,
         text: "Sempre atenciosos e rápidos no atendimento. Recomendo a Brandani Contabilidade para todos os meus colegas!",
         name: "Marta Lima",
+        officer: "Gerente de Vendas"
     },
     {
         id: 4,
         text: "Excelente serviço e ótima relação custo-benefício. Equipe preparada e confiável.",
         name: "Sandra Dias",
+        officer: "Assistente de Contabilidade"
     },
     {
         id: 4,
         text: "Excelente serviço e ótima relação custo-benefício. Equipe preparada e confiável.",
         name: "Fernanda Dias",
+        officer: "Assistente de Contabilidade"
     },
 ];
 
-const aboutUsHomeFeatures = ['Altos padrões de integridades', 'Altos padrões de integridades', 'Altos padrões de integridades', 'Altos padrões de integridades', 'Altos padrões de integridades', 'Altos padrões de integridades']
+const aboutUsHomeFeatures = ['Altos padrões de integridades', 'Melhor serviço de contabilidade', 'Controle de qualidade', 'Equipe Profissional', 'Suporte ao cliente']
 
 export default function Home() {
     return (
         <Layout>
 
-            <AboutUsHome title='SOBRE NÓS' subtitle='Confie em nossos melhores contadores' description='Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade físcal.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/em-construcao/banner-fundo.png' />
+            <AboutUsHome title='SOBRE NÓS' subtitle='Confie em nossos melhores contadores' description='Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade fiscal.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/pessoas-mesa-reuniao.png' />
 
             <AboutOurServices services={services} />
 
-            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-[#29AAE1] font-semibold'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='imposto de renda imposto de renda imposto de renda imposto de renda imposto de renda imposto de renda' srcImage='/img/em-construcao/banner-fundo.png' />
 
-            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-[#29AAE1] font-semibold'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/em-construcao/banner-fundo.png' order="md:order-first" />
+            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary font-semibold font-serif'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.png' />
 
-            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-[#29AAE1] font-semibold'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/em-construcao/banner-fundo.png' />
 
-            <BriefContentServices name='MICROEEMPRENDEDOR INDIVIDUAL' about={`<span class='text-[#29AAE1] font-semibold'>Quer abrir MEI?</span> <br> Nós te ajudamos a <br> começar com o <br> pé direito!`} details='A Brandani orienta e cuida de todo o processo para você formalizar seu negócio sem complicações' srcImage='/img/em-construcao/banner-fundo.png' order="md:order-first" />
+            <div className="relative ">
+                <div className="absolute -left-60">
+                    <Image src="/img/home/b-grande-transparente.png" alt="b grandão" width={531} height={492} />
+                </div>
+            </div>
+
+            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary font-semibold font-serif'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.png' order="md:order-first" />
+
+            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary font-semibold font-serif'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.png' />
+
 
             <BgEthicalConduct
                 title="EFICIÊNCIA EM TODAS AS ETAPAS"
                 subtitle="Conduta & Ética"
-                description="Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio"
-                imageSrc="/img/em-construcao/banner-fundo.png"
+                description="A Brandani Contabilidade, preza por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los."
+                imageSrc="/img/home/tres-pessoas-sorrindo-etica.png"
                 imageAlt="Ethical conduct illustration"
-                buttonText="Preciso de um contador"
+                buttonText="Acessar Portal"
             />
 
             {/* Como adicionar um Feed do Instagram na sua aplicação React - https://www.youtube.com/watch?v=WaMzfDN66MU */}

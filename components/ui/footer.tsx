@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({
     copyright
 }) => {
     return (
-        <footer className="bg-[#0D4259] text-white py-6">
+        <footer className="bg-primary text-white py-6 z-40">
             <ContainerDefault>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8 py-8">
                     <CompanyInfo logoSrc={logoSrc} socialLinks={socialLinks} contactInfo={contactInfo} />
@@ -64,7 +64,7 @@ const CompanyInfo: React.FC<{
 }> = ({ logoSrc, socialLinks, contactInfo }) => (
     <div className="flex flex-col gap-4 col-span-2">
         <div className="mb-4">
-            <Image src={logoSrc} alt="Logo" width={80} height={80} />
+            <Image src={logoSrc} alt="Logo" width={296} height={87} />
         </div>
         <div className="flex space-x-6">
             {socialLinks.map((link, index) => (
@@ -103,11 +103,11 @@ const FooterBottom: React.FC<{
 }> = ({ companyDescription, address, copyright }) => (
     <>
         <div className="border-t border-gray-400 py-4 mt-4 text-sm">
-            <p className="mb-2 md:w-[75%]">{companyDescription}</p>
-            <p className="mb-2">{address}</p>
+            <p className="mb-2 md:w-[75%] text-gray-400">{companyDescription}</p>
+            <div className="mb-2 mt-3">{address}</div>
         </div>
-        <div className="text-center text-sm">
-            <p>{copyright}</p>
+        <div className="text-center text-sm text-gray-400">
+            <div>{copyright}</div>
         </div>
     </>
 );

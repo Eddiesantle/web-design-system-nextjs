@@ -6,11 +6,11 @@ import Footer from '../ui/footer';
 const NavbarRange = () => {
     return (<div className='bg-[#EEF2F6] text-black'>
         <div className='container mx-auto text-center py-2 px-12 flex flex-col md:flex-row md:justify-between text-sm gap-2'>
-            <div className='flex flex-col md:flex-row gap-0 md:gap-3 mx-auto md:mx-0'>
-                <div>(69) 9.9981-0662</div>
-                <div>contato@brandani.com.br</div>
+            <div className='flex flex-col text-xs md:flex-row gap-0 md:gap-3 mx-auto md:mx-0'>
+                <div>(69) 3441-5425</div>
+                <div>Administração@brandanicontabilidade.com.br</div>
             </div>
-            <div>FAZER LOGIN</div>
+            <div className='text-xs'>Seg - Sex 8:00 às 12:00 | 13:00 às 18:00</div>
         </div>
     </div>)
 }
@@ -27,9 +27,9 @@ const socialLinks = [{
 }]
 
 const contactInfo = {
-    phone: "(XX) XXXX-XXXX",
-    whatsapp: "(XX) XXXX-XXXX",
-    email: "contato@brandani.com.br"
+    phone: "(69) 9.9981-0662",
+    whatsapp: "(69) 3441-5425",
+    email: "Administração@brandanicontabilidade.com.br"
 }
 
 const section = [{
@@ -57,7 +57,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </main>
 
 
-            <Footer copyright='© 2024 Brandani Contabilidade. Todos os direitos reservados.' companyDescription='Fundada em 1983, empresa atua no ramo de contabilidade empresarial (Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário e planejamento sucessório.' address='Endereço: Rua Exemplo, 123, Cidade, Estado' socialLinks={socialLinks} contactInfo={contactInfo} logoSrc='/img/em-construcao/logo-branca.png' sections={section} />
+            <Footer copyright='Todos os direitos reservados @ Brandani Contabilidade CNPJ:04.915.922/0001-80' companyDescription='Fundada em 1983, empresa atua no ramo de contabilidade empresarial Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário, planejamento sucessório. Seu quadro de colaboradores é composto por contadores e especialistas na área contábil.' address='RONDÔNIA: Av. Mal. Rondon, 2679 - Princesa Isabel, Cacoal - RO, Cep:78976-065' socialLinks={socialLinks} contactInfo={contactInfo} logoSrc='/img/em-construcao/logo-branca.png' sections={section} />
         </div>
     );
 };

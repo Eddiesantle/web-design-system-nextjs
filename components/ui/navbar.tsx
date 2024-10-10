@@ -6,8 +6,6 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import React, { ReactNode, forwardRef, useState } from 'react';
 import './../../app/globals.css';
 import './../../app/styles.css';
-import Link from 'next/link';
-import { buttonVariants } from './button';
 import { CaretDownIcon } from '@radix-ui/react-icons';
 import classNames from 'classnames';
 import Image from 'next/image';
@@ -24,7 +22,7 @@ const LinkItem = ({ href, children, className, ...props }: CustomLinkProps) => {
 
   return (
     <NavigationMenu.Link asChild>
-      <NextLink href={href} className={`hover:text-violet-600 ${className} ${isActive ? 'active:bg-violet-700' : ''}`} {...props}>
+      <NextLink href={href} className={`hover:text-secondary  ${className} ${isActive ? 'active:bg-violet-700' : ''}`} {...props}>
         {children}
       </NextLink>
     </NavigationMenu.Link>
@@ -65,77 +63,71 @@ const Navbar = () => {
 
   return (
     <div className="container mx-auto p-2">
-      <nav className="navbar flex justify-between items-center py-4 md:py-6 h-[80px]">
+      <nav className="navbar flex flex-col md:flex-row justify-between items-center py-4 md:py-6 md:h-[80px]">
 
-        {/* Logo à esquerda */}
-        <div className="flex items-center">
-          <Image src="/img/em-construcao/icon-b-logo.png" alt="Logo Cliente" width={37} height={35} className="mx-auto md:mx-0" />
+        <div className='flex items-center'>
+          {/* Logo à esquerda */}
+          <div className="flex items-center">
+            <Image src="/img/home/logo-default.png" alt="Logo Cliente" width={248} height={73} className="mx-auto md:mx-0" />
+          </div>
+
+          {/* Menu Hambúrguer no mobile e menu normal no desktop */}
+          <div className="md:hidden text-black text-lg ml-auto">
+            <button
+              aria-label="Menu"
+              className="font-[24px]"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              &#9776;
+            </button>
+          </div>
         </div>
-
-        {/* Menu Hambúrguer no mobile e menu normal no desktop */}
-        <div className="md:hidden text-black text-lg">
-          <button
-            aria-label="Menu"
-            className="font-[24px]"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            &#9776;
-          </button>
-        </div>
-
-
 
         {/* Menu principal */}
         <NavigationMenu.Root className={`navbar-menu flex gap-10 items-center ${isOpen ? 'block' : 'hidden'} md:flex`}>
           <NavigationMenu.List className="navbar-menu text-black flex flex-col md:flex-row gap-6 md:gap-10 items-center">
             <NavigationMenu.Item>
-              <LinkItem href="/home">Home</LinkItem>
+              <LinkItem href="/home">Inicio</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
               <LinkItem href="/sobre">Sobre</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <NavigationMenu.Trigger className="NavigationMenuTrigger">
+              <NavigationMenu.Trigger className="flex flex-row gap-1 items-center">
                 Serviços <CaretDownIcon className="CaretDown" aria-hidden />
-                <NavigationMenu.Content className="NavigationMenuContent bg-blue-200 mt-12">
+                <NavigationMenu.Content className="NavigationMenuContent bg-[#F8F8F8] mt-12 rounded-lg">
                   <ul className="List one">
-                    <li style={{ gridRow: 'span 3' }}>
-                      <NavigationMenu.Link asChild>
-                        <a className="Callout" href="/">
-                          <svg aria-hidden width="38" height="38" viewBox="0 0 25 25" fill="white">
-                            <path d="M12 25C7.58173 25 4 21.4183 4 17C4 12.5817 7.58173 9 12 9V25Z"></path>
-                            <path d="M12 0H4V8H12V0Z"></path>
-                            <path d="M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z"></path>
-                          </svg>
-                          <div className="CalloutHeading">Radix Primitives</div>
-                          <p className="CalloutText">Unstyled, accessible components for React.</p>
-                        </a>
-                      </NavigationMenu.Link>
+                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3'>
+                      <div className="text-lg text-secondary">Contabilidade</div>
+                      <LinkItem href="https://stitches.dev/" >
+                        Empresarial
+                      </LinkItem>
+                      <LinkItem href="/colors" >
+                        Rural
+                      </LinkItem>
+                    </li>
+                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3'>
+                      <div className="text-lg text-secondary">Planejamento</div>
+                      <LinkItem href="https://stitches.dev/" >
+                        Planejamento Sucessório
+                      </LinkItem>
+                      <LinkItem href="/colors" >
+                        Planejamento Tributário
+                      </LinkItem>
                     </li>
 
-                    <LinkItem href="https://stitches.dev/" >
-                      CSS-in-JS with best-in-class developer experience.
-                    </LinkItem>
-                    <LinkItem href="/colors" >
-                      Beautiful, thought-out palettes with auto dark mode.
-                    </LinkItem>
-                    <LinkItem href="https://icons.radix-ui.com/">
-                      A crisp set of 15x15 icons, balanced and consistent.
-                    </LinkItem>
                   </ul>
                 </NavigationMenu.Content>
               </NavigationMenu.Trigger>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <LinkItem href="/news">Notícias</LinkItem>
+              <LinkItem href="/news">Links Úteis</LinkItem>
+            </NavigationMenu.Item>
+            <NavigationMenu.Item>
+              <LinkItem href="/news">Trabalhe Conosco</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
               <LinkItem href="/contact">Contato</LinkItem>
-            </NavigationMenu.Item>
-            <NavigationMenu.Item>
-              <Link target="_blank" href="https://api.whatsapp.com/send?phone=6934415425" className={buttonVariants({ variant: "default" })}>
-                Preciso de ajuda
-              </Link>
             </NavigationMenu.Item>
           </NavigationMenu.List>
         </NavigationMenu.Root>

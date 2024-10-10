@@ -23,10 +23,10 @@ const BgEthicalConduct: React.FC<BgEthicalConductProps> = ({
     buttonText
 }) => {
     return (
-        <div className="md:bg-cover bg-center flex flex-col justify-between" style={{ backgroundImage: `url('img/em-construcao/banner-fundo.png')` }}>
+        <div className="md:bg-cover bg-center flex flex-col justify-between" style={{ backgroundImage: `url('img/home/banner-fundo-etica.png')` }}>
             <ContainerDefault>
-                <div className="grid grid-cols-1 lg:grid-cols-8 justify-center py-14">
-                    <div className="grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-8 justify-center pt-20">
+                    <div className="grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto  gap-8">
                         <ContentSection
                             title={title}
                             subtitle={subtitle}
@@ -52,15 +52,37 @@ interface ContentSectionProps {
 }
 
 const ContentSection: React.FC<ContentSectionProps> = ({ title, subtitle, description, buttonText }) => (
-    <div className='flex flex-col justify-center text-center md:text-left gap-6 lg:w-[330px] text-white'>
+    <div className='flex flex-col justify-center text-center md:text-left gap-6 lg:w-[330px] mb-6 text-white'>
         <p className="text-sm">{title}</p>
-        <div className="text-2xl">{subtitle}</div>
+        <div className="text-3xl font-serif">{subtitle}</div>
         <p className="text-md">{description}</p>
-        <p className="text-sm">{title}</p>
-        <p className="text-sm">{title}</p>
-        <div>
+        <div className='flex gap-4 items-center'>
+            <div className='flex-auto w-[70px]'>
+                <Image
+                    src="/img/home/extension-puzzle-outline@2x.png"
+                    alt="quebra cabeça"
+                    width={59}
+                    height={59}
+                    priority
+                />
+            </div>
+            <div className="text-lg">Consultoria Personalizada para Contabilidade Rural</div>
+        </div>
+        <div className='flex gap-4 items-center'>
+            <div className='flex-auto w-[60px] '>
+                <Image
+                    src="/img/home/smartphone-iphone@2x.png"
+                    alt="quebra cabeça"
+                    width={29}
+                    height={39}
+                    priority
+                />
+            </div>
+            <div className="text-lg">Portal Online para Clientes (Área do Cliente)</div>
+        </div>
+        <div className='my-6'>
 
-            <Link href="/contato" className={buttonVariants({ variant: "default" })}>{buttonText}</Link>
+            <Link href="/contato" className={buttonVariants({ variant: "tertiary", size: 'lg' })}>{buttonText}</Link>
         </div>
     </div>
 );
@@ -71,9 +93,9 @@ interface ImageSectionProps {
 }
 
 const ImageSection: React.FC<ImageSectionProps> = ({ imageSrc, imageAlt }) => (
-    <div className={`flex justify-center md:justify-start`}>
+    <div className={`flex justify-center md:justify-start `}>
         <Image
-            className={`rounded-lg`}
+            className={`rounded-t-lg`}
             src={imageSrc}
             alt={imageAlt}
             width={350}
