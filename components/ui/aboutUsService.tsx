@@ -1,10 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/button';
 import { ContainerDefault } from '../layout/containerDefault';
 
 interface AboutUsServiceProps {
+    id?: string
     title: string;
     subtitle: string;
     description: string;
@@ -14,6 +13,7 @@ interface AboutUsServiceProps {
 }
 
 const AboutUsService: React.FC<AboutUsServiceProps> = ({
+    id,
     title,
     subtitle,
     description,
@@ -23,7 +23,7 @@ const AboutUsService: React.FC<AboutUsServiceProps> = ({
 }) => {
     return (
         <ContainerDefault>
-            <div className="grid grid-cols-1 lg:grid-cols-8 justify-center py-14">
+            <div className="grid grid-cols-1 lg:grid-cols-8 justify-center pt-14 pb-20" id={id}>
                 <div className={`grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto gap-8`}>
                     <ImageSection
                         imageSrc={imageSrc}
@@ -47,15 +47,10 @@ const ContentSection: React.FC<Pick<AboutUsServiceProps, 'title' | 'subtitle' | 
     subtitle,
     description
 }) => (
-    <div className='flex flex-col gap-6'>
+    <div className='flex flex-col gap-6 lg:w-[360px] text-center md:text-left '>
         <div className="text-sm">{title}</div>
-        <div className="text-2xl">{subtitle}</div>
+        <div className="text-3xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
         <div>{description}</div>
-        <div className='flex flex-row gap-3 mt-4'>
-            <Link href="/sobre" className={buttonVariants({ variant: "default" })}>
-                Sobre a Brandini
-            </Link>
-        </div>
     </div>
 );
 
@@ -66,11 +61,11 @@ const ImageSection: React.FC<Pick<AboutUsServiceProps, 'imageSrc' | 'imageAlt' |
 }) => (
     <div className={`flex justify-center md:justify-start ${order ?? "md:order-last"}`}>
         <Image
-            className={`rounded-lg h-[280px] ${order ?? "mx-auto"}`}
+            className={`rounded-lg  ${order ?? "mx-auto"}`}
             src={imageSrc}
             alt={imageAlt}
-            width={350}
-            height={214}
+            width={701}
+            height={100}
             priority
         />
     </div>

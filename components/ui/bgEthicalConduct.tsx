@@ -54,7 +54,7 @@ interface ContentSectionProps {
 const ContentSection: React.FC<ContentSectionProps> = ({ title, subtitle, description, buttonText }) => (
     <div className='flex flex-col justify-center text-center md:text-left gap-6 lg:w-[330px] mb-6 text-white'>
         <p className="text-sm">{title}</p>
-        <div className="text-3xl font-serif">{subtitle}</div>
+        <div className="text-3xl " dangerouslySetInnerHTML={{ __html: subtitle }} />
         <p className="text-md">{description}</p>
         <div className='flex gap-4 items-center'>
             <div className='flex-auto w-[70px]'>

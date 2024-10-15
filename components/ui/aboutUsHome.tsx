@@ -50,7 +50,7 @@ const ContentSection: React.FC<Omit<AboutUsHomeProps, 'imageSrc' | 'imageAlt'>> 
 }) => (
     <div className='flex flex-col gap-6'>
         <div className="text-sm">{title}</div>
-        <div className="text-3xl">{subtitle}</div>
+        <div className="text-3xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
         <div>{description}</div>
         <FeatureList features={features} />
         <ActionButtons />

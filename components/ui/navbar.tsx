@@ -93,27 +93,30 @@ const Navbar = () => {
               <LinkItem href="/sobre">Sobre</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <NavigationMenu.Trigger className="flex flex-row gap-1 items-center">
-                Serviços <CaretDownIcon className="CaretDown" aria-hidden />
+              <NavigationMenu.Trigger className=' flex flex-row gap-1 items-center justify-center  w-[100%] text-center md:text-start w-[350px] md:w-full'>
+
+                <span className='hover:text-secondary'>Serviços</span>  <CaretDownIcon className="CaretDown" aria-hidden />
                 <NavigationMenu.Content className="NavigationMenuContent bg-[#F8F8F8] mt-12 rounded-lg">
                   <ul className="List one">
-                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3'>
+                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3 mt-3'>
                       <div className="text-lg text-secondary">Contabilidade</div>
-                      <LinkItem href="https://stitches.dev/" >
-                        Empresarial
-                      </LinkItem>
-                      <LinkItem href="/colors" >
+                      <LinkItem href="/servicos/contabilidade#rural" >
                         Rural
                       </LinkItem>
-                    </li>
-                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3'>
-                      <div className="text-lg text-secondary">Planejamento</div>
-                      <LinkItem href="https://stitches.dev/" >
-                        Planejamento Sucessório
+                      <LinkItem href="/servicos/contabilidade#empresarial" >
+                        Empresarial
                       </LinkItem>
-                      <LinkItem href="/colors" >
+
+                    </li>
+                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3 mt-3'>
+                      <div className="text-lg text-secondary">Planejamento</div>
+                      <LinkItem href="/servicos/planejamento#tributario" >
                         Planejamento Tributário
                       </LinkItem>
+                      <LinkItem href="/servicos/planejamento#sucessorio" >
+                        Planejamento Sucessório
+                      </LinkItem>
+
                     </li>
 
                   </ul>
@@ -121,13 +124,13 @@ const Navbar = () => {
               </NavigationMenu.Trigger>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <LinkItem href="/news">Links Úteis</LinkItem>
+              <LinkItem href="/links-uteis">Links Úteis</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
               <LinkItem href="/news">Trabalhe Conosco</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <LinkItem href="/contact">Contato</LinkItem>
+              <LinkItem href="/contato">Contato</LinkItem>
             </NavigationMenu.Item>
           </NavigationMenu.List>
         </NavigationMenu.Root>

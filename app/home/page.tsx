@@ -30,19 +30,19 @@ const instagramPosts = [
 const services = [
     {
         imageUrl: '/img/home/icons8-contabilidade-100.png',
-        postUrl: 'https://example.com/service1',
+        postUrl: '/servicos/contabilidade',
         title: 'Contabilidade Rural e Empresarial',
         description: 'Confiança e expertise para gerenciar seu negócio.'
     },
     {
         imageUrl: '/img/home/icons8-imposto-96.png',
-        postUrl: 'https://example.com/service1',
+        postUrl: '/servicos/planejamento',
         title: 'Planejamento Tributário e Sucessório',
         description: 'Otimizamos sua carga fiscal para aumentar a lucratividade.'
     },
     {
         imageUrl: '/img/home/icons8-companhia-64.png',
-        postUrl: 'https://example.com/service1',
+        postUrl: '/servicos/contabilidade',
         title: 'Pequenas Empresas',
         description: 'Soluções inteligentes para produtores rurais, empresas de qualquer porte e clínicas.'
     },
@@ -100,12 +100,12 @@ export default function Home() {
     return (
         <Layout>
 
-            <AboutUsHome title='SOBRE NÓS' subtitle='Confie em nossos melhores contadores' description='Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade fiscal.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/pessoas-mesa-reuniao.png' />
+            <AboutUsHome title='SOBRE NÓS' subtitle="Confie em <br> <span class='text-secondary'>nossos melhores</span> <br> contadores" description='Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade fiscal.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/pessoas-mesa-reuniao.png' />
 
             <AboutOurServices services={services} />
 
 
-            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary font-semibold font-serif'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.png' />
+            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.png' />
 
 
             <div className="relative ">
@@ -114,14 +114,14 @@ export default function Home() {
                 </div>
             </div>
 
-            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary font-semibold font-serif'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.png' order="md:order-first" />
+            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.png' order="md:order-first" />
 
-            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary font-semibold font-serif'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.png' />
+            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.png' />
 
 
             <BgEthicalConduct
                 title="EFICIÊNCIA EM TODAS AS ETAPAS"
-                subtitle="Conduta & Ética"
+                subtitle="Conduta <span class='text-secondary'>& Ética</span>"
                 description="A Brandani Contabilidade, preza por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los."
                 imageSrc="/img/home/tres-pessoas-sorrindo-etica.png"
                 imageAlt="Ethical conduct illustration"
