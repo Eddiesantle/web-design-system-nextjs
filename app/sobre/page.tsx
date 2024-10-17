@@ -32,7 +32,7 @@ const AboutUs = () => {
                             priority
                         />
                     </div>
-                    <div className='flex flex-col gap-6 lg:w-[330px]'>
+                    <div className='flex flex-col gap-6 lg:w-[330px] text-center md:text-start'>
                         <div className="text-sm">BRANDANI CONTABILIDADE</div>
                         <div className="text-3xl"><span className="text-secondary">Sobre</span><br /> Nosso Escritório</div>
                         <div>
@@ -41,9 +41,9 @@ const AboutUs = () => {
                         <div>
                             Seu quadro de colaboradores é composto por contadores e especialistas na área contábil.
                         </div>
-                        <div className='flex flex-row gap-3 mt-4'>
+                        <div className='flex flex-row gap-3 mt-4 justify-center md:justify-start '>
 
-                            <Link href="/sobre" className={buttonVariants({ variant: "tertiary" })}>Preciso de um contatos</Link>
+                            <Link href="/sobre" className={buttonVariants({ variant: "tertiary" })}>Preciso de um contador</Link>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@ const MissionVisionPrinciples: React.FC<MissionVisionPrinciplesProps> = ({ missi
                 {missionVisionPrinciplesProps.map((info, index) => (
                     <div className="flex bg-gradient-to-r from-[#004780] to-[#0060AD] text-white gap-6 rounded-lg py-10 px-12" key={index}>
                         <div className="flex md:flex-row flex-col gap-2">
-                            <div className="text-sm w-[100px]">{info.title}</div>
+                            <div className="font-semibold w-[120px]">{info.title}</div>
                             <div className="text-sm">{info.description}</div>
                         </div>
 
@@ -147,7 +147,7 @@ export default function Sobre() {
             <ContentsSevices about={`<span class='text-secondary'>Nossa</span> Missão,<br> Visão e Valores`} details='O código de conduta e ética da empresa, é uma orientação para que todos os colaboradores tomem decisões baseadas nos valores que a empresa compartilha, reduzindo o risco de interpretações subjetivas quanto aos aspectos morais, éticos e legais concernentes às relações de trabalho.' srcImage='/img/home/homem-sentado-notebook.png' order />
             <MissionVisionPrinciples missionVisionPrinciplesProps={missionVisionPrinciplesMock} />
             <ContentsSevices details='A Brandani Contabilidade conduz suas atividades e negócios conforme os padrões éticos, respeitando as leis e normas aplicáveis, incluindo, sem limitação, normas de saúde e segurança, legislação trabalhista e fiscal, sendo esta uma prerrogativa de atuação para os seus colaboradores e parceiros.' srcImage='/img/home/mesa-reuniao-pessoas.png' />
-            <ContentsSevices details='Prezamos por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los.' srcImage='/img/home/dashboard-analise.png' buttonLink="sobre" buttonLabel="Preciso de um contador" order />
+            <ContentsSevices details='Prezamos por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los.' srcImage='/img/home/dashboard-analise.png' buttonLink="/contato" buttonLabel="Preciso de um contador" order />
 
         </Layout>
     )

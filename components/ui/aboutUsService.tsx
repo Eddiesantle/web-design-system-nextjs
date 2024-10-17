@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { ContainerDefault } from '../layout/containerDefault';
+import Link from 'next/link';
+import { buttonVariants } from './button';
 
 interface AboutUsServiceProps {
     id?: string
@@ -51,6 +53,9 @@ const ContentSection: React.FC<Pick<AboutUsServiceProps, 'title' | 'subtitle' | 
         <div className="text-sm">{title}</div>
         <div className="text-3xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
         <div>{description}</div>
+        <div>
+            <Link href="/contato" className={buttonVariants({ variant: "tertiary", size: 'lg' })}>Preciso de um contador</Link>
+        </div>
     </div>
 );
 

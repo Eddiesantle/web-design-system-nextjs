@@ -22,7 +22,7 @@ const LinkItem = ({ href, children, className, ...props }: CustomLinkProps) => {
 
   return (
     <NavigationMenu.Link asChild>
-      <NextLink href={href} className={`hover:text-secondary  ${className} ${isActive ? 'active:bg-violet-700' : ''}`} {...props}>
+      <NextLink href={href} className={`hover:text-secondary  ${className} ${isActive ? 'border-b-[1px] border-secondary text-secondary ' : ''}`} {...props}>
         {children}
       </NextLink>
     </NavigationMenu.Link>
@@ -131,6 +131,26 @@ const Navbar = () => {
             </NavigationMenu.Item>
             <NavigationMenu.Item>
               <LinkItem href="/contato">Contato</LinkItem>
+            </NavigationMenu.Item>
+            <NavigationMenu.Item>
+              <NavigationMenu.Trigger className=' flex flex-row gap-1 items-center justify-center  w-[100%] text-center md:text-start w-[350px] md:w-full'>
+
+                <span className='hover:text-secondary'>Fazer Login</span>  <CaretDownIcon className="CaretDown" aria-hidden />
+                <NavigationMenu.Content className="NavigationMenuContentLogin bg-[#F8F8F8] mt-12 rounded-lg">
+                  <ul className="List two">
+                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3 mt-3'>
+                      <div className="text-lg text-secondary">Contabilidade</div>
+                      <LinkItem href="/servicos/contabilidade#rural" >
+                        Rural
+                      </LinkItem>
+                      <LinkItem href="/servicos/contabilidade#empresarial" >
+                        Empresarial
+                      </LinkItem>
+
+                    </li>
+                  </ul>
+                </NavigationMenu.Content>
+              </NavigationMenu.Trigger>
             </NavigationMenu.Item>
           </NavigationMenu.List>
         </NavigationMenu.Root>

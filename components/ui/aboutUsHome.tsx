@@ -48,7 +48,7 @@ const ContentSection: React.FC<Omit<AboutUsHomeProps, 'imageSrc' | 'imageAlt'>> 
     description,
     features
 }) => (
-    <div className='flex flex-col gap-6'>
+    <div className='flex text-center md:text-start flex-col gap-6'>
         <div className="text-sm">{title}</div>
         <div className="text-3xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
         <div>{description}</div>
@@ -78,7 +78,7 @@ const FeatureList: React.FC<{ features: string[] }> = ({ features }) => (
 const ActionButtons: React.FC = () => (
     <div className='flex flex-row gap-3 mt-4'>
         <Link href="/sobre" className={buttonVariants({ variant: "secondary", size: 'lg' })}>Sobre a Brandini</Link>
-        <Link href="/contato" className={buttonVariants({ variant: "outline", size: 'lg' })}>Preciso de um contato</Link>
+        <Link href="/contato" className={buttonVariants({ variant: "outline", size: 'lg' })}>Preciso de um contador</Link>
     </div>
 );
 

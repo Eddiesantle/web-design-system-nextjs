@@ -105,7 +105,7 @@ export default function Home() {
             <AboutOurServices services={services} />
 
 
-            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.png' />
+            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.png' link='/servicos/contabilidade#rural' />
 
 
             <div className="relative ">
@@ -114,9 +114,9 @@ export default function Home() {
                 </div>
             </div>
 
-            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.png' order="md:order-first" />
+            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.png' order="md:order-first" link='/servicos/planejamento#sucessorio' />
 
-            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.png' />
+            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.png' link='/servicos/contabilidade#empresarial' />
 
 
             <BgEthicalConduct
