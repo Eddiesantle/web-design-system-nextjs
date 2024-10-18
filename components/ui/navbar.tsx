@@ -9,6 +9,7 @@ import './../../app/styles.css';
 import { CaretDownIcon } from '@radix-ui/react-icons';
 import classNames from 'classnames';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Define the types for the Link component
 interface CustomLinkProps extends LinkProps {
@@ -68,7 +69,7 @@ const Navbar = () => {
         <div className='flex items-center'>
           {/* Logo à esquerda */}
           <div className="flex items-center">
-            <Image src="/img/home/logo-default.png" alt="Logo Cliente" width={248} height={73} className="mx-auto md:mx-0" />
+            <Link href="/home"><Image src="/img/home/logo-default.png" alt="Logo Cliente" width={248} height={73} className="mx-auto md:mx-0" /></Link>
           </div>
 
           {/* Menu Hambúrguer no mobile e menu normal no desktop */}
@@ -101,10 +102,10 @@ const Navbar = () => {
                     <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3 mt-3'>
                       <div className="text-lg text-secondary">Contabilidade</div>
                       <LinkItem href="/servicos/contabilidade#rural" >
-                        Rural
+                        Contabilidade Rural
                       </LinkItem>
                       <LinkItem href="/servicos/contabilidade#empresarial" >
-                        Empresarial
+                        Contabilidade Empresarial
                       </LinkItem>
 
                     </li>

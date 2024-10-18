@@ -70,6 +70,8 @@ export default function RootLayout({
             }}
           />
         )}
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
       </body>
     </html>
   );

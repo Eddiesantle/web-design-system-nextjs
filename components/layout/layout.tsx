@@ -34,13 +34,13 @@ const contactInfo = {
 
 const section = [{
     title: "A EMPRESA",
-    links: [{ label: "A Empresa", href: "string" }, { label: "Contabilidade", href: "string" }, { label: "Segurança", href: "string" }]
+    links: [{ label: "Sobre nós", href: "/sobre" }, { label: "Depoimento de clientes", href: "#depoimentos" }, { label: "Parceiros", href: "contato" }, { label: "Links Utéis", href: "/links-uteis" }]
 }, {
     title: "CONTABILIDADE",
-    links: [{ label: "A Empresa", href: "string" }, { label: "Contabilidade", href: "string" }, { label: "Segurança", href: "string" }]
+    links: [{ label: "Contabiliidade Rural", href: "/servicos/contabilidade#rural" }, { label: "Contabilidade Empresarial", href: "/servicos/contabilidade#empresarial" }, { label: "Planejamento Tributário", href: "/servicos/planejamento#tributario" }, { label: "Planejamento Sucessório", href: "/servicos/planejamento#sucessorio" }]
 }, {
     title: "SEGURANÇA",
-    links: [{ label: "A Empresa", href: "string" }, { label: "Contabilidade", href: "string" }, { label: "Segurança", href: "string" }]
+    links: [{ label: "Política de privacidade", href: "string" }, { label: "Termos de uso", href: "string" }, { label: "Área do Contador", href: "string" }, { label: "Área da Empresa", href: "string" }, { label: "Portal do Cliente", href: "string" }]
 },]
 
 

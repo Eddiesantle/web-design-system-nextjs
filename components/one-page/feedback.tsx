@@ -23,7 +23,7 @@ const Feedback: React.FC<FeedbackProps> = ({ testimonials }) => {
     };
 
     return (
-        <div className="bg-gradient-to-r from-[#003662] to-[#00569C] text-white pb-16 md:pt-[150px]">
+        <div id="depoimentos" className="bg-gradient-to-r from-[#003662] to-[#00569C] text-white pb-16 md:pt-[150px]">
             <div className="relative">
                 <div className="absolute -left-60">
                     <Image src="/img/home/b-grande-transparente.png" alt="b grandão" width={531} height={492} />

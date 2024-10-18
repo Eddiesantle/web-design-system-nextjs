@@ -25,19 +25,27 @@ const InfoContact = () => {
                         <h2 className="text-3xl">Entre em <span className="text-secondary">contato</span></h2>
                         <p className="text-sm w-[80%]">Nossa equipe desenvolve estratégias eficazes para otimizar sua carga tributária, seja você empresário</p>
                     </div>
-                    <div className="flex flex-row gap-2 text-sm">
+                    <div className="flex md:flex-row justify-center space-y-6 md:space-y-0 flex-col gap-2 text-sm">
 
-                        <div className="flex flex-col gap-1">
-                            <Image src='/img/home/icon-position-map.png' alt="contato" width={55} height={55} />
-                            <div>Endereço</div>
-                            <div>RONDÔNIA</div>
-                            <div>Av. Mal. Rondon, 2679 - Princesa Isabel, Cacoal Cep: 78976-065</div>
+                        <div className="flex md:flex-col flex-row gap-3">
+                            <div className="w-[55px] ">
+                                <Image src='/img/home/icon-position-map.png' alt="contato" width={55} height={55} />
+                            </div>
+                            <div className="w-[155px] md:w-full gap-2 ">
+                                <div className="text-lg">Endereço</div>
+                                <div>RONDÔNIA</div>
+                                <div>Av. Mal. Rondon, 2679 - Princesa Isabel, Cacoal Cep: 78976-065</div>
+                            </div>
                         </div>
-                        <div className="flex flex-col gap-2">
-                            <Image src='/img/home/icon-contact.png' alt="contato" width={55} height={55} />
-                            <div>Contato</div>
-                            <div>(69) 9.9981-0662</div>
-                            <div>Ivandro@brandanicontabilidade.com.br</div>
+                        <div className="flex  md:flex-col flex-row gap-3">
+                            <div className="w-[55px]">
+                                <Image src='/img/home/icon-contact.png' alt="contato" width={55} height={55} />
+                            </div>
+                            <div className="w-[155px] md:w-full gap-2">
+                                <div className="text-lg">Contato</div>
+                                <div>(69) 9.9981-0662</div>
+                                <div>Ivandro@brandanicontabilidade.com.br</div>
+                            </div>
                         </div>
 
                     </div>
