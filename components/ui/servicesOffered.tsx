@@ -38,7 +38,7 @@ const CompanyDescription: React.FC<Pick<ServicesOfferedProps, 'title' | 'descrip
 
 const ServicesList: React.FC<Pick<ServicesOfferedProps, 'services'>> = ({ services }) => (
     <div className='flex flex-col gap-6'>
-        <h2 className="text-2xl">Serviços <span className='text-secondary '>Oferecidos</span></h2>
+        <h2 className="text-2xl">Serviços <span className='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Oferecidos</span></h2>
         <div className="flex flex-col gap-3">
             {services.map((service, index) => (
                 <ServiceItem key={index} icon={service.icon} description={service.description} />

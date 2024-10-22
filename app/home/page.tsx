@@ -2,30 +2,12 @@ import { Layout } from '@/components/layout/layout';
 import Feedback from '@/components/one-page/feedback';
 import AboutOurServices from '@/components/ui/aboutOurServices';
 import AboutUsHome from '@/components/ui/aboutUsHome';
+import BannerHome from '@/components/ui/bannerHome';
 import BgEthicalConduct from '@/components/ui/bgEthicalConduct';
 import BriefContentServices from '@/components/ui/briefContentServices';
 import LatestInstagramPosts from '@/components/ui/latestInstagramPosts';
 import Image from 'next/image';
 import React from 'react';
-
-
-const instagramPosts = [
-    {
-        imageUrl: '/img/instagram/post1.png',
-        postUrl: 'https://www.instagram.com/brandani_contabilidade',
-        description: 'Dicas de contabilidade para o agronegócio!',
-    },
-    {
-        imageUrl: '/img/instagram/post2.png',
-        postUrl: 'https://www.instagram.com/brandani_contabilidade',
-        description: 'Saiba como planejar seu imposto de renda.',
-    },
-    {
-        imageUrl: '/img/instagram/post3.png',
-        postUrl: 'https://www.instagram.com/brandani_contabilidade',
-        description: 'Microempreendedor individual: como começar.',
-    },
-];
 
 const services = [
     {
@@ -100,12 +82,14 @@ export default function Home() {
     return (
         <Layout>
 
-            <AboutUsHome title='SOBRE NÓS' subtitle="Confie em <br> <span class='text-secondary'>nossos melhores</span> <br> contadores" description='Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade fiscal.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/pessoas-mesa-reuniao.png' />
+            <BannerHome />
+
+            <AboutUsHome title='SOBRE NÓS' subtitle="Confie em <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>nossos melhores</span> <br> contadores" description='Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade fiscal.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/pessoas-mesa-reuniao.png' />
 
             <AboutOurServices services={services} />
 
 
-            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.png' link='/servicos/contabilidade#rural' />
+            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.png' link='/servicos/contabilidade#rural' />
 
 
             <div className="relative ">
@@ -114,14 +98,14 @@ export default function Home() {
                 </div>
             </div>
 
-            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.png' order="md:order-first" link='/servicos/planejamento#sucessorio' />
+            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.png' order="md:order-first" link='/servicos/planejamento#sucessorio' />
 
-            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.png' link='/servicos/contabilidade#empresarial' />
+            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.png' link='/servicos/contabilidade#empresarial' />
 
 
             <BgEthicalConduct
                 title="EFICIÊNCIA EM TODAS AS ETAPAS"
-                subtitle="Conduta <span class='text-secondary'>& Ética</span>"
+                subtitle="Conduta <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>& Ética</span>"
                 description="A Brandani Contabilidade, preza por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los."
                 imageSrc="/img/home/tres-pessoas-sorrindo-etica.png"
                 imageAlt="Ethical conduct illustration"
@@ -129,7 +113,7 @@ export default function Home() {
             />
 
             {/* Como adicionar um Feed do Instagram na sua aplicação React - https://www.youtube.com/watch?v=WaMzfDN66MU */}
-            <LatestInstagramPosts posts={instagramPosts} />
+            <LatestInstagramPosts />
 
             <Feedback testimonials={testimonials} />
         </Layout>

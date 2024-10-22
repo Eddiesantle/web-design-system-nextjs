@@ -47,7 +47,7 @@ const Feedback: React.FC<FeedbackProps> = ({ testimonials }) => {
 const FeedbackDescription: React.FC = () => (
     <div className="md:col-span-1">
         <p className="text-sm uppercase tracking-wider ">Depoimentos</p>
-        <h3 className="text-3xl  mt-2 mb-4">Depoimentos de <span className="text-secondary  ">Clientes</span></h3>
+        <h3 className="text-3xl  mt-2 mb-4">Depoimentos de <span className="text-secondary  font-semibold font-[family-name:var(--font-frank-ruhl-libre)]">Clientes</span></h3>
         <p className="leading-relaxed">
             Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar
         </p>

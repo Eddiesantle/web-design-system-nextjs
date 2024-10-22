@@ -63,17 +63,17 @@ const Navbar = () => {
 
 
   return (
-    <div className="container mx-auto p-2">
-      <nav className="navbar flex flex-col md:flex-row justify-between items-center py-4 md:py-6 md:h-[80px]">
+    <div className="container mx-auto p-2 lg:px-20">
+      <nav className="navbar flex flex-col lg:flex-row justify-between items-center py-4 md:py-6 lg:h-[80px]">
 
-        <div className='flex items-center'>
+        <div className='flex items-center w-full md:w-auto'>
           {/* Logo à esquerda */}
           <div className="flex items-center">
             <Link href="/home"><Image src="/img/home/logo-default.png" alt="Logo Cliente" width={248} height={73} className="mx-auto md:mx-0" /></Link>
           </div>
 
           {/* Menu Hambúrguer no mobile e menu normal no desktop */}
-          <div className="md:hidden text-black text-lg ml-auto">
+          <div className="md:hidden text-black text-lg ml-auto w-[50px] text-center">
             <button
               aria-label="Menu"
               className="font-[24px]"
@@ -85,7 +85,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu principal */}
-        <NavigationMenu.Root className={`navbar-menu flex gap-10 items-center ${isOpen ? 'block' : 'hidden'} md:flex`}>
+        <NavigationMenu.Root className={`navbar-menu flex gap-10 items-center mt-2 ${isOpen ? 'block' : 'hidden'} z-40 md:flex`}>
           <NavigationMenu.List className="navbar-menu text-black flex flex-col md:flex-row gap-6 md:gap-10 items-center">
             <NavigationMenu.Item>
               <LinkItem href="/home">Inicio</LinkItem>
@@ -125,6 +125,32 @@ const Navbar = () => {
               </NavigationMenu.Trigger>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
+              <NavigationMenu.Trigger className=' flex flex-row gap-1 items-center justify-center  w-[100%] text-center md:text-start w-[350px] md:w-full'>
+
+                <span className='hover:text-secondary'>Portal Online</span>  <CaretDownIcon className="CaretDown" aria-hidden />
+                <NavigationMenu.Content className="NavigationMenuContent bg-[#F8F8F8] mt-12 rounded-lg">
+                  <ul className="List two">
+                    <li style={{ gridRow: 'span 4' }} className='flex flex-col gap-3 mt-3'>
+                      <div className="text-lg text-secondary">Acessar</div>
+
+                      <Link href="https://onvio.com.br/clientcenter/pt/auth?r=%2Fhome" target='_blank' >
+                        Portal do Cliente
+                      </Link>
+                      <Link href="https://passport.nibo.com.br/account/login" target='_blank' >
+                        Área do Empresa
+                      </Link>
+                      <Link href="https://contador.nibo.com.br/User/LogOn" target='_blank' >
+                        Área da Contador
+                      </Link>
+
+
+
+                    </li>
+                  </ul>
+                </NavigationMenu.Content>
+              </NavigationMenu.Trigger>
+            </NavigationMenu.Item>
+            <NavigationMenu.Item>
               <LinkItem href="/links-uteis">Links Úteis</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
@@ -133,26 +159,7 @@ const Navbar = () => {
             <NavigationMenu.Item>
               <LinkItem href="/contato">Contato</LinkItem>
             </NavigationMenu.Item>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger className=' flex flex-row gap-1 items-center justify-center  w-[100%] text-center md:text-start w-[350px] md:w-full'>
 
-                <span className='hover:text-secondary'>Fazer Login</span>  <CaretDownIcon className="CaretDown" aria-hidden />
-                <NavigationMenu.Content className="NavigationMenuContentLogin bg-[#F8F8F8] mt-12 rounded-lg">
-                  <ul className="List two">
-                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3 mt-3'>
-                      <div className="text-lg text-secondary">Contabilidade</div>
-                      <LinkItem href="/servicos/contabilidade#rural" >
-                        Rural
-                      </LinkItem>
-                      <LinkItem href="/servicos/contabilidade#empresarial" >
-                        Empresarial
-                      </LinkItem>
-
-                    </li>
-                  </ul>
-                </NavigationMenu.Content>
-              </NavigationMenu.Trigger>
-            </NavigationMenu.Item>
           </NavigationMenu.List>
         </NavigationMenu.Root>
 

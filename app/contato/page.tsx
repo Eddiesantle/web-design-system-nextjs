@@ -22,7 +22,7 @@ const InfoContact = () => {
             <div className="grid grid-cols-1 lg:grid-cols-8 justify-center pt-14 pb-20">
                 <div className={`grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto gap-8`}>
                     <div className="flex flex-col gap-2">
-                        <h2 className="text-3xl">Entre em <span className="text-secondary">contato</span></h2>
+                        <h2 className="text-3xl">Entre em <span className="text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]">contato</span></h2>
                         <p className="text-sm w-[80%]">Nossa equipe desenvolve estratégias eficazes para otimizar sua carga tributária, seja você empresário</p>
                     </div>
                     <div className="flex md:flex-row justify-center space-y-6 md:space-y-0 flex-col gap-2 text-sm">
@@ -84,7 +84,7 @@ const FormContact = () => {
             <div className="grid grid-cols-1 lg:grid-cols-8 justify-center pt-14 pb-20">
                 <div className={`grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto gap-8`}>
                     <div className="flex flex-col gap-2">
-                        <h2 className="text-3xl">Envie sua <span className="text-secondary">mensagem</span></h2>
+                        <h2 className="text-3xl">Envie sua <span className="text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]">mensagem</span></h2>
                         <p className="text-sm w-[80%]">Nossa equipe desenvolve estratégias eficazes para otimizar sua carga tributária, seja você empresário</p>
                     </div>
                     <div className="flex flex-row gap-2 text-sm w-full">

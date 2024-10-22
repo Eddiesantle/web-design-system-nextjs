@@ -16,6 +16,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const FrankRuhlLibre = localFont({
+  src: "./fonts/frank-ruhl-libre/FrankRuhlLibre-VariableFont_wght.ttf",
+  variable: "--font-frank-ruhl-libre",
+  weight: "100 900",
+});
+
+
+
 
 export const metadata: Metadata = {
   title: "Web Design System",
@@ -42,7 +50,7 @@ export default function RootLayout({
         <link rel="icon" href="/img/favicon/favicon.ico" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${FrankRuhlLibre.variable} antialiased`}
       >
         {children}
 
