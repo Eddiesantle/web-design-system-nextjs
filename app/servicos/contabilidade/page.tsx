@@ -33,7 +33,7 @@ export default function Sobre() {
                 title="CONTABILIDADE RURAL"
                 subtitle="Soluções <br> contábeis para <br> o <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Produtor Rural<span/>"
                 description="Oferecemos serviços especializados em contabilidade rural, auxiliando produtores e empresários do setor a manterem suas obrigações fiscais em dia e a obterem o máximo de benefícios tributários."
-                imageSrc="/img/home/senhor-do-campo-b.png"
+                imageSrc="/img/home/senhor-do-campo-b.webp"
                 imageAlt="pessoas unidas"
             />
             <ServicesOffered
@@ -47,7 +47,7 @@ export default function Sobre() {
                 title="CONTABILIDADE EMPRESARIAL"
                 subtitle="<span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>O que você precisa?</span> <br> Lucro Real, Presumido e <br> Simples Nacional"
                 description="Atuamos com excelência na contabilidade de empresas de diferentes portes e regimes tributários, garantindo que sua empresa esteja em conformidade e pague menos impostos, de forma legal e estratégica."
-                imageSrc="/img/home/contador-sorrido-com-tablet.png"
+                imageSrc="/img/home/contador-sorrido-com-tablet.webp"
                 imageAlt="pessoas unidas"
                 order
             />

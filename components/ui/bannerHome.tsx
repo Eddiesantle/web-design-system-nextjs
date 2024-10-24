@@ -7,11 +7,11 @@ import { buttonVariants } from "./button";
 
 const images = [
     {
-        src: '/img/home/campo-maquinas-plantacao.png',
+        src: '/img/home/campo-maquinas-plantacao.webp',
         alt: 'Campo com máquinas e plantação'
     },
     {
-        src: '/img/home/duas-vacas-campo.png',
+        src: '/img/home/duas-vacas-campo.webp',
         alt: 'Duas vacas no campo'
     }
 ];
@@ -21,7 +21,7 @@ const StarRating = () => (
         {[...Array(5)].map((_, index) => (
             <Image
                 key={index}
-                src="/img/home/icon-star.png"
+                src="/img/home/icon-star.webp"
                 alt="Star"
                 width={13}
                 height={13}
@@ -74,10 +74,11 @@ const BackgroundImages = ({ currentImageIndex }: { currentImageIndex: number }) 
     <>
         <div className="absolute -left-60">
             <Image
-                src={`/img/home/b-grande-transparente.png`}
+                src={`/img/home/b-grande-transparente.webp`}
                 alt="b grandão"
                 width={400}
                 height={300}
+                loading="lazy"
             />
         </div>
         <div className='md:absolute mt-4 -right-4 -top-4 w-full md:w-[350px] lg:w-[520px]'>
@@ -86,6 +87,7 @@ const BackgroundImages = ({ currentImageIndex }: { currentImageIndex: number }) 
                 alt={images[currentImageIndex].alt}
                 width={520}
                 height={200}
+                loading="lazy"
             />
         </div>
     </>

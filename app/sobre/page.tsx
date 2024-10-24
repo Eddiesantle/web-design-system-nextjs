@@ -22,10 +22,10 @@ const AboutUs = () => {
             <div className="grid grid-cols-1 lg:grid-cols-8 justify-center py-14">
                 <div className="grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto gap-8 ">
 
-                    <div className='justify-center md:justify-start'>
+                    <div className='hidden md:block justify-center md:justify-start'>
                         <Image
-                            className="rounded-lg h-[380px]"
-                            src="/img/home/sobre-historia-empresa.png"
+                            className="rounded-lg md:h-[380px]"
+                            src="/img/home/sobre-historia-empresa.webp"
                             alt="pessoas unidas"
                             width={701}
                             height={100}
@@ -35,6 +35,16 @@ const AboutUs = () => {
                     <div className='flex flex-col gap-6 lg:w-[330px] text-center md:text-start'>
                         <div className="text-sm">BRANDANI CONTABILIDADE</div>
                         <div className="text-3xl"><span className="text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]">Sobre</span><br /> Nosso Escritório</div>
+                        <div className='md:hidden block justify-center md:justify-start'>
+                            <Image
+                                className="rounded-lg md:h-[380px]"
+                                src="/img/home/sobre-historia-empresa.webp"
+                                alt="pessoas unidas"
+                                width={701}
+                                height={100}
+                                priority
+                            />
+                        </div>
                         <div>
                             Fundada em 1983, empresa atua no ramo de contabilidade empresarial Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário, planejamento sucessório.
                         </div>
@@ -43,7 +53,7 @@ const AboutUs = () => {
                         </div>
                         <div className='flex flex-row gap-3 mt-4 justify-center md:justify-start '>
 
-                            <Link href="/sobre" className={buttonVariants({ variant: "tertiary" })}>Preciso de um contador</Link>
+                            <Link href="/contato" className={buttonVariants({ variant: "tertiary" })}>Preciso de um contador</Link>
                         </div>
                     </div>
                 </div>
@@ -78,9 +88,10 @@ const ContentsSevices: React.FC<ContentsServicesProps> = ({ name, about, details
                         {about && <div className="text-2xl" dangerouslySetInnerHTML={{ __html: about }} />}
                         <p className="text-md">{details}</p>
                         {buttonLink && (
-                            <div className="mt-4">
+                            <div className="flex flex-col md:flex-row gap-3 mt-4">
                                 <Link href={buttonLink} className={buttonVariants({ variant: "tertiary" })}>{buttonLabel}</Link>
                             </div>
+
                         )}
                     </div>
                 </div>
@@ -144,10 +155,10 @@ export default function Sobre() {
         <Layout>
             <AboutUs />
             <InformationCountsAdvantages stats={stats} />
-            <ContentsSevices about={`<span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Nossa</span> Missão,<br> Visão e Valores`} details='O código de conduta e ética da empresa, é uma orientação para que todos os colaboradores tomem decisões baseadas nos valores que a empresa compartilha, reduzindo o risco de interpretações subjetivas quanto aos aspectos morais, éticos e legais concernentes às relações de trabalho.' srcImage='/img/home/homem-sentado-notebook.png' order />
+            <ContentsSevices about={`<span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Nossa</span> Missão,<br> Visão e Valores`} details='O código de conduta e ética da empresa, é uma orientação para que todos os colaboradores tomem decisões baseadas nos valores que a empresa compartilha, reduzindo o risco de interpretações subjetivas quanto aos aspectos morais, éticos e legais concernentes às relações de trabalho.' srcImage='/img/home/homem-sentado-notebook.webp' order />
             <MissionVisionPrinciples missionVisionPrinciplesProps={missionVisionPrinciplesMock} />
-            <ContentsSevices details='A Brandani Contabilidade conduz suas atividades e negócios conforme os padrões éticos, respeitando as leis e normas aplicáveis, incluindo, sem limitação, normas de saúde e segurança, legislação trabalhista e fiscal, sendo esta uma prerrogativa de atuação para os seus colaboradores e parceiros.' srcImage='/img/home/mesa-reuniao-pessoas.png' />
-            <ContentsSevices details='Prezamos por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los.' srcImage='/img/home/dashboard-analise.png' buttonLink="/contato" buttonLabel="Preciso de um contador" order />
+            <ContentsSevices details='A Brandani Contabilidade conduz suas atividades e negócios conforme os padrões éticos, respeitando as leis e normas aplicáveis, incluindo, sem limitação, normas de saúde e segurança, legislação trabalhista e fiscal, sendo esta uma prerrogativa de atuação para os seus colaboradores e parceiros.' srcImage='/img/home/mesa-reuniao-pessoas.webp' />
+            <ContentsSevices details='Prezamos por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los.' srcImage='/img/home/dashboard-analise.webp' buttonLink="/contato" buttonLabel="Preciso de um contador" order />
 
         </Layout>
     )

@@ -11,19 +11,19 @@ import React from 'react';
 
 const services = [
     {
-        imageUrl: '/img/home/icons8-contabilidade-100.png',
+        imageUrl: '/img/home/icons8-contabilidade-100.webp',
         postUrl: '/servicos/contabilidade',
         title: 'Contabilidade Rural e Empresarial',
         description: 'Confiança e expertise para gerenciar seu negócio.'
     },
     {
-        imageUrl: '/img/home/icons8-imposto-96.png',
+        imageUrl: '/img/home/icons8-imposto-96.webp',
         postUrl: '/servicos/planejamento',
         title: 'Planejamento Tributário e Sucessório',
         description: 'Otimizamos sua carga fiscal para aumentar a lucratividade.'
     },
     {
-        imageUrl: '/img/home/icons8-companhia-64.png',
+        imageUrl: '/img/home/icons8-companhia-64.webp',
         postUrl: '/servicos/contabilidade',
         title: 'Pequenas Empresas',
         description: 'Soluções inteligentes para produtores rurais, empresas de qualquer porte e clínicas.'
@@ -84,30 +84,30 @@ export default function Home() {
 
             <BannerHome />
 
-            <AboutUsHome title='SOBRE NÓS' subtitle="Confie em <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>nossos melhores</span> <br> contadores" description='Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade fiscal.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/pessoas-mesa-reuniao.png' />
+            <AboutUsHome title='SOBRE NÓS' subtitle="Confie em <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>nossos melhores</span> <br> contadores" description='Fundada em 1983, há mais de 40 anos simplificando a contabilidade rural e empresarial. Confiança e expertise para gerenciar seu negócio com total conformidade fiscal.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/pessoas-mesa-reuniao.webp' />
 
             <AboutOurServices services={services} />
 
 
-            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.png' link='/servicos/contabilidade#rural' />
+            <BriefContentServices name='CONTABILIDADE RURAL' about={`Do campo à mesa; <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Nós cuidamos</span> das <br> suas obrigações fiscais`} details='Imposto de Renda do Agricultor ou do Produtor Rural? Nós fazemos para você! Elimine preocupações fiscal e maximize seus lucros.' srcImage='/img/home/homem-campo-feliz.webp' link='/servicos/contabilidade#rural' />
 
 
             <div className="relative ">
                 <div className="absolute -left-60">
-                    <Image src="/img/home/b-grande-transparente.png" alt="b grandão" width={531} height={492} />
+                    <Image src="/img/home/b-grande-transparente.webp" alt="b grandão" width={531} height={492} />
                 </div>
             </div>
 
-            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.png' order="md:order-first" link='/servicos/planejamento#sucessorio' />
+            <BriefContentServices name='PLANEJAMENTO TRIBUTÁRIO E SUCESSÓRIO' about={`Pague <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>menos impostos</span> <br> de forma legal e Planejada`} details='Nosso planejamento tributário otimiza sua carga fiscal para aumentar a lucratividade. Planejamos sua transição patrimonial para garantir o futuro do seu negócio.' srcImage='/img/home/mulher-analisando-papeis.webp' order="md:order-first" link='/servicos/planejamento#sucessorio' />
 
-            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.png' link='/servicos/contabilidade#empresarial' />
+            <BriefContentServices name='CONTABILIDADE EMPRESARIAL' about={`Lucro Real, Presumido <br> ou Simples? Deixe que a <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Brandani que resolva</span>`} details='Identificamos o melhor regime tributário para a sua empresa. Cuidamos das finanças para você focar no crescimento do seu negócio.' srcImage='/img/home/homem-olhando-para-lado-com-cardeneta.webp' link='/servicos/contabilidade#empresarial' />
 
 
             <BgEthicalConduct
                 title="EFICIÊNCIA EM TODAS AS ETAPAS"
                 subtitle="Conduta <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>& Ética</span>"
                 description="A Brandani Contabilidade, preza por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los."
-                imageSrc="/img/home/tres-pessoas-sorrindo-etica.png"
+                imageSrc="/img/home/tres-pessoas-sorrindo-etica.webp"
                 imageAlt="Ethical conduct illustration"
                 buttonText="Acessar Portal"
             />

@@ -58,9 +58,9 @@ const ContentSection: React.FC<Omit<AboutUsHomeProps, 'imageSrc' | 'imageAlt'>> 
 );
 
 const FeatureList: React.FC<{ features: string[] }> = ({ features }) => (
-    <div className='flex flex-col gap-y-2'>
+    <div className='flex flex-col gap-y-2 '>
         {features.map((feature, index) => (
-            <div key={index} className='flex gap-4 font-medium'>
+            <div key={index} className='flex gap-4 font-medium justify-center lg:justify-start'>
                 <Image
                     className="rounded-full"
                     src="/img/home/check-verified.svg"
@@ -76,7 +76,7 @@ const FeatureList: React.FC<{ features: string[] }> = ({ features }) => (
 );
 
 const ActionButtons: React.FC = () => (
-    <div className='flex flex-row gap-3 mt-4'>
+    <div className='flex flex-col md:flex-row gap-3 mt-4'>
         <Link href="/sobre" className={buttonVariants({ variant: "secondary", size: 'lg' })}>Sobre a Brandini</Link>
         <Link href="/contato" className={buttonVariants({ variant: "outline", size: 'lg' })}>Preciso de um contador</Link>
     </div>
@@ -86,9 +86,9 @@ const ImageSection: React.FC<Pick<AboutUsHomeProps, 'imageSrc' | 'imageAlt'>> = 
     imageSrc,
     imageAlt
 }) => (
-    <div className='justify-center md:justify-start'>
+    <div className=' justify-center md:justify-start content-center'>
         <Image
-            className="rounded-lg "
+            className="rounded-lg"
             src={imageSrc}
             alt={imageAlt}
             width={701}

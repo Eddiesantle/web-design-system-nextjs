@@ -26,7 +26,7 @@ const Feedback: React.FC<FeedbackProps> = ({ testimonials }) => {
         <div id="depoimentos" className="bg-gradient-to-r from-[#003662] to-[#00569C] text-white pb-16 md:pt-[150px]">
             <div className="relative">
                 <div className="absolute -left-60">
-                    <Image src="/img/home/b-grande-transparente.png" alt="b grandão" width={531} height={492} />
+                    <Image src="/img/home/b-grande-transparente.webp" alt="b grandão" width={531} height={492} />
                 </div>
             </div>
             <ContainerDefault>
@@ -115,6 +115,7 @@ const CarouselIndicators: React.FC<CarouselIndicatorsProps> = ({
                             onClick={() => goToSlide(i)}
                             className={`w-2 h-2 p-[6px] rounded-full mx-2 ${currentIndex / 2 === i ? 'bg-secondary' : 'bg-white'
                                 }`}
+                            type="button"
                         ></button>
                     ))}
                 </div>

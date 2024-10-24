@@ -36,7 +36,7 @@ const Header: React.FC = () => (
 
 const ServiceGrid: React.FC<AboutOurServicesProps> = ({ services }) => (
     <div className="relative md:h-[130px] lg:w-[800px] mx-auto">
-        <div className='md:absolute grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-2 lg:gap-8'>
+        <div className='md:absolute grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8'>
             {services.map((service, index) => (
                 <ServiceCard key={index} {...service} />
             ))}

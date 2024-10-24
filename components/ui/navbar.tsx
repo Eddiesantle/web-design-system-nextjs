@@ -69,7 +69,7 @@ const Navbar = () => {
         <div className='flex items-center w-full md:w-auto'>
           {/* Logo à esquerda */}
           <div className="flex items-center">
-            <Link href="/home"><Image src="/img/home/logo-default.png" alt="Logo Cliente" width={248} height={73} className="mx-auto md:mx-0" /></Link>
+            <Link href="/home"><Image src="/img/home/logo-default.webp" alt="Logo Cliente" width={248} height={73} className="mx-auto md:mx-0" /></Link>
           </div>
 
           {/* Menu Hambúrguer no mobile e menu normal no desktop */}

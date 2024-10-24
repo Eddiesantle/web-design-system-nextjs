@@ -29,7 +29,7 @@ const InfoContact = () => {
 
                         <div className="flex md:flex-col flex-row gap-3">
                             <div className="w-[55px] ">
-                                <Image src='/img/home/icon-position-map.png' alt="contato" width={55} height={55} />
+                                <Image src='/img/home/icon-position-map.webp' alt="contato" width={55} height={55} />
                             </div>
                             <div className="w-[155px] md:w-full gap-2 ">
                                 <div className="text-lg">Endereço</div>
@@ -39,7 +39,7 @@ const InfoContact = () => {
                         </div>
                         <div className="flex  md:flex-col flex-row gap-3">
                             <div className="w-[55px]">
-                                <Image src='/img/home/icon-contact.png' alt="contato" width={55} height={55} />
+                                <Image src='/img/home/icon-contact.webp' alt="contato" width={55} height={55} />
                             </div>
                             <div className="w-[155px] md:w-full gap-2">
                                 <div className="text-lg">Contato</div>

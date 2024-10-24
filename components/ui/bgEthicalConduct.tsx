@@ -23,7 +23,7 @@ const BgEthicalConduct: React.FC<BgEthicalConductProps> = ({
     buttonText
 }) => {
     return (
-        <div className="md:bg-cover bg-center flex flex-col justify-between" style={{ backgroundImage: `url('img/home/banner-fundo-etica.png')` }}>
+        <div className="md:bg-cover bg-center flex flex-col justify-between" style={{ backgroundImage: `url('img/home/banner-fundo-etica.webp')` }}>
             <ContainerDefault>
                 <div className="grid grid-cols-1 lg:grid-cols-8 justify-center pt-20">
                     <div className="grid col-start-2 col-span-6 md:grid-cols-2 w-full mx-auto  gap-8">
@@ -59,7 +59,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ title, subtitle, descri
         <div className='flex gap-4 items-center'>
             <div className='flex-auto w-[70px]'>
                 <Image
-                    src="/img/home/extension-puzzle-outline@2x.png"
+                    src="/img/home/extension-puzzle-outline@2x.webp"
                     alt="quebra cabeça"
                     width={59}
                     height={59}
@@ -71,7 +71,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ title, subtitle, descri
         <div className='flex gap-4 items-center'>
             <div className='flex-auto w-[60px] '>
                 <Image
-                    src="/img/home/smartphone-iphone@2x.png"
+                    src="/img/home/smartphone-iphone@2x.webp"
                     alt="quebra cabeça"
                     width={29}
                     height={39}
@@ -82,7 +82,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ title, subtitle, descri
         </div>
         <div className='my-6'>
 
-            <Link href="/contato" className={buttonVariants({ variant: "tertiary", size: 'lg' })}>{buttonText}</Link>
+            <Link href="https://onvio.com.br/clientcenter/pt/auth?r=%2Fhome" target='_blank' className={buttonVariants({ variant: "tertiary", size: 'lg' })}>{buttonText}</Link>
         </div>
     </div>
 );

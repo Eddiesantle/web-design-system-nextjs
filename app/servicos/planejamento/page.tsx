@@ -30,7 +30,7 @@ export default function Sobre() {
                 title="PLANEJAMENTO TRIBUTÁRIO"
                 subtitle="Planejamento <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Tributário</span> pague <br> menos legalmente"
                 description="Nossa equipe desenvolve estratégias eficazes para otimizar sua carga tributária, seja você empresário ou produtor rural, garantindo que pague menos impostos sem abrir mão da legalidade."
-                imageSrc="/img/home/mulher-sorrindo-tributario.png"
+                imageSrc="/img/home/mulher-sorrindo-tributario.webp"
                 imageAlt="pessoas unidas"
             />
             <ServicesOffered
@@ -43,7 +43,7 @@ export default function Sobre() {
                 title="PLANEJAMENTO SUCESSÓRIO"
                 subtitle="Planejamento <br> <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Sucessório</span> proteja <br> o futuro do seu <br> patrimônio"
                 description="Oferecemos assessoria completa em planejamento sucessório, garantindo a continuidade dos negócios e a correta transferência de bens para herdeiros, de forma legal e segura."
-                imageSrc="/img/home/luz-calculadora.png"
+                imageSrc="/img/home/luz-calculadora.webp"
                 imageAlt="pessoas unidas"
                 order
             />

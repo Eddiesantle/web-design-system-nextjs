@@ -62,9 +62,10 @@ const TextSection: React.FC<Omit<ContentsServicesProps, 'srcImage'>> = ({
         <p className="text-sm">{name}</p>
         <div className="text-3xl" dangerouslySetInnerHTML={{ __html: about }} />
         <p className="text-md">{details}</p>
-        <div>
+        <div className='flex flex-col md:flex-row gap-3 mt-4'>
             <Link href={link} className={buttonVariants({ variant: "tertiary", size: 'lg' })}>Saber mais</Link>
         </div>
+
     </div>
 );
 
