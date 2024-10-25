@@ -154,7 +154,7 @@ const Navbar = () => {
               <LinkItem href="/links-uteis">Links Úteis</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <LinkItem href="/news">Trabalhe Conosco</LinkItem>
+              <LinkItem href="/trabalhe-conosco">Trabalhe Conosco</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
               <LinkItem href="/contato">Contato</LinkItem>

@@ -14,6 +14,7 @@ import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 
 const InfoContact = () => {
@@ -91,7 +92,7 @@ const FormContact = () => {
 
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="w-full grid gap-4">
-                                <div className="grid grid-cols-2 gap-2">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                     <div>
                                         {/* name */}
                                         <FormField
@@ -191,7 +192,7 @@ const FormContact = () => {
                                         )}
                                     />
                                 </div>
-                                <div className="flex justify-between">
+                                <div className="flex flex-col md:flex-row gap-3 justify-between">
                                     <div className="flex items-center">
                                         <input
                                             type="checkbox"
@@ -201,7 +202,7 @@ const FormContact = () => {
                                             required
                                         />
                                         <label htmlFor="acceptTerms" className="ml-2 block text-sm">
-                                            Eu aceito os <a href="#" className="text-blue-600 underline">termos e condições</a>
+                                            Eu aceito os <Link href="/termos-de-uso" className="text-blue-600 underline">termos e condições</Link>
                                         </label>
                                     </div>
                                     <div>

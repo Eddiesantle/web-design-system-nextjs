@@ -38,7 +38,7 @@ const contactInfo = {
 
 const section = [{
     title: "A EMPRESA",
-    links: [{ label: "Sobre nós", href: "/sobre" }, { label: "Depoimento de clientes", href: "/home#depoimentos" }, { label: "Links Utéis", href: "/links-uteis" }, { label: "Política de privacidade", href: "politica-de-privacidade" }, { label: "Termos de uso", href: "termos-de-uso" },]
+    links: [{ label: "Sobre nós", href: "/sobre" }, { label: "Depoimento de clientes", href: "/home#depoimentos" }, { label: "Links Utéis", href: "/links-uteis" }, { label: "Trabalhe Conosco", href: "trabalhe-conosco" }, { label: "Política de privacidade", href: "politica-de-privacidade" }, { label: "Termos de uso", href: "termos-de-uso" },]
 }, {
     title: "CONTABILIDADE",
     links: [{ label: "Contabiliidade Rural", href: "/servicos/contabilidade#rural" }, { label: "Contabilidade Empresarial", href: "/servicos/contabilidade#empresarial" }, { label: "Planejamento Tributário", href: "/servicos/planejamento#tributario" }, { label: "Planejamento Sucessório", href: "/servicos/planejamento#sucessorio" }]

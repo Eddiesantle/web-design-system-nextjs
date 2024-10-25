@@ -10,11 +10,12 @@ import Link from "next/link";
 const EntreEmContato = () => {
     return (
         <div className="lg:absolute mx-auto text-black top-0 right-0 flex text-center  space-y-5 flex-col items-center justify-center border rounded-lg bg-white p-8 w-[339px] h-[305px] z-10">
-            <Image src="/img/em-construcao/icon-b-logo.png" alt="logo" width={37} height={35} />
-            <div className="font-medium">ENTRE EM CONTATO</div>
-            <div>Clique no botão abaixo para ser redirecionado para nosso whatsapp</div>
-            <Link target="_blank" href="https://api.whatsapp.com/send?phone=6934415425" className={buttonVariants({ variant: "default", size: 'lg' })}>
-                <Image src="/img/em-construcao/icon-whatsapp.png" alt="logo" className="mr-2" width={20} height={20} /> CHAMAR NO WHATSAPP
+            <Image src="/img/em-construcao/logo-cor.png" alt="logo" width={250} height={35} />
+            <div className="font-medium">Te ajudo a conquistar saúde plena!</div>
+            <div>
+                Agende aqui suas consultas presenciais e on-line ⤵️</div>
+            <Link target="_blank" href="https://api.whatsapp.com/send?phone=4898237366&text=Olá, gostaria de saber mais sobre o trabalho da Nutri Magda Simoni" className={buttonVariants({ variant: "default", size: 'lg' })}>
+                <Image src="/img/em-construcao/icon-whatsapp.png" alt="logo" className="mr-2" width={20} height={20} /> Agendar uma consulta
             </Link>
         </div>
     );
@@ -25,16 +26,13 @@ const EntreEmContato = () => {
 const AccordionSobre = () => {
     return (
         <div className="flex p-4 md:p-0 ">
-            <div className="hidden md:block w-[80px]">
-                <Image src="/img/em-construcao/icon-b-cinza.png" alt="logo" width={60} height={50} />
-            </div>
 
 
             <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
-                    <AccordionTrigger>Sobre a Brandani Contabilidade</AccordionTrigger>
+                    <AccordionTrigger>Sobre a Magda Simoni | Nutricionista</AccordionTrigger>
                     <AccordionContent>
-                        Fundada em 1983, empresa atua no ramo de contabilidade empresarial (Lucro Real, Lucro Presumido e Simples nacional), contabilidade rural pessoa física e jurídica, MEI, planejamento tributário e planejamento sucessório.
+                        Sempre acreditei na nutrição como o caminho de cura e bem-estar. Uma ciência que abrange muito mais que pesos e medidas. É a construção de qualidade de vida e autocuidado. É sobre bem-estar físico, mental e espiritual. <br />
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
@@ -48,20 +46,20 @@ const Rodape = () => {
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center ">
                 {/* Contato */}
                 <div className="flex space-x-4 md:space-y-0 space-y-3 lg:flex-row flex-col items-center justify-between">
-                    <a href="tel:+556934415425" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/em-construcao/icon-whatsapp-azul.png" alt="logo" width={15} height={5} /></span>  <span>69 3441-5425</span>
+                    <a href="tel:+554898237366" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
+                        <span><Image src="/img/em-construcao/icon-whatsapp-azul.png" alt="logo" width={15} height={5} /></span>  <span>48 9823-7366</span>
                     </a>
-                    <a href="mailto:ivandro@brandanicontabilidade.com" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/em-construcao/icon-email-azul.png" alt="logo" width={15} height={45} /></span> <span>ivandro@brandanicontabilidade.com</span>
+                    <a href="mailto:nutrimagdasimoni@gmail.com" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
+                        <span><Image src="/img/em-construcao/icon-email-azul.png" alt="logo" width={15} height={45} /></span> <span>nutrimagdasimoni@gmail.com</span>
                     </a>
-                    <a href="https://www.instagram.com/brandanicontabilidade/" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/em-construcao/icon-instagram-azul.png" alt="logo" width={15} height={5} /></span>  <span>@brandanicontabilidade</span>
+                    <a href="https://www.instagram.com/nutrimagdasimoni/" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
+                        <span><Image src="/img/em-construcao/icon-instagram-azul.png" alt="logo" width={15} height={5} /></span>  <span>@nutrimagdasimoni</span>
                     </a>
                 </div>
 
                 {/* Direitos Reservados */}
                 <div className="mt-4 md:mt-0 text-center">
-                    <p>© Todos os direitos reservados. | BRANDANI CONTABILIDADE</p>
+                    <p>© Todos os direitos reservados. | MAGDA SIMONI NUTRI</p>
                 </div>
             </div>
         </footer>
@@ -80,7 +78,7 @@ export default function EmConstrucao() {
                             {/* Coluna 1 */}
                             <div className="col-span-12 md:col-span-12 ">
                                 <div className="px-8 my-8 text-white">
-                                    <Image src="/img/em-construcao/logo-branca.png" alt="logo" width={388} height={114} />
+                                    <Image src="/img/em-construcao/logo-branca.png" alt="logo" width={288} height={14} />
 
                                 </div>
 
@@ -98,10 +96,11 @@ export default function EmConstrucao() {
                             </div>
 
                             {/* Coluna 1 */}
-                            <div className="flex col-span-12 lg:w-[50%] text-white mt-6 mb-3 justify-center md:justify-start">
+                            <div className="flex col-span-12 lg:w-[50%] text-white mb-3 justify-center md:justify-start">
 
                                 <AccordionSobre />
                             </div>
+
 
                         </div>
 

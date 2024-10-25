@@ -11,7 +11,7 @@ const Temporizador = () => {
 
     useEffect(() => {
         // Definir a data final como 17 de outubro
-        const targetDate = new Date("2024-11-01T00:00:00");
+        const targetDate = new Date("2024-12-01T00:00:00");
 
         // Função para atualizar o tempo restante
         const updateTimeLeft = () => {

@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({
     return (
         <footer className="bg-primary text-white py-6 z-40">
             <ContainerDefault>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 py-8">
+                <div className="flex flex-col md:grid  lg:grid-cols-5 gap-8 py-8">
                     <CompanyInfo logoSrc={logoSrc} socialLinks={socialLinks} contactInfo={contactInfo} />
                     {sections.map((section, index) => (
                         <FooterLinks key={index} {...section} />

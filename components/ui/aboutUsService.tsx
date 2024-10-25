@@ -56,7 +56,7 @@ const ContentSection: React.FC<Pick<AboutUsServiceProps, 'title' | 'subtitle' | 
 }) => (
     <div className='flex flex-col gap-6 lg:w-[360px] text-center md:text-left '>
         <div className="text-sm">{title}</div>
-        <div className="text-3xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
+        <div className="text-2xl md:text-3xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
         <ImageSection
             imageSrc={imageSrc}
             imageAlt={imageAlt}
