@@ -3,17 +3,13 @@ import { ContainerDefault } from "@/components/layout/containerDefault";
 import { Layout } from "@/components/layout/layout";
 import Image from "next/image";
 
-import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
-import { useMemo } from "react";
+
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
-import { contactSchema } from "@/validators/contact";
 import { z } from "zod";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import { contactJobSchema } from "@/validators/contact-job";
 
