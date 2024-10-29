@@ -5,7 +5,7 @@ import { ContainerDefault } from "../layout/containerDefault";
 
 interface SocialLink {
     href: string;
-    label: string;
+    srcIcon: string;
 }
 
 interface ContactInfo {
@@ -62,14 +62,17 @@ const CompanyInfo: React.FC<{
     socialLinks: SocialLink[];
     contactInfo: ContactInfo;
 }> = ({ logoSrc, socialLinks, contactInfo }) => (
-    <div className="flex flex-col gap-4 col-span-2">
-        <div className="mb-4">
+    <div className="flex flex-col gap-6 col-span-2">
+        <div>
             <Image src={logoSrc} alt="Logo" width={296} height={87} />
         </div>
         <div className="flex space-x-6">
             {socialLinks.map((link, index) => (
-                <Link key={index} href={link.href} aria-label={link.label} className="hover:text-gray-400">
-                    {link.label}
+
+
+                <Link key={index} href={link.href} aria-label={link.srcIcon} className="hover:text-gray-400" target='_blank'>
+                    <Image src={link.srcIcon} width={30} height={30} alt='Instagram' />
+
                 </Link>
             ))}
         </div>

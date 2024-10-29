@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
-import { googleAnalyticsId, hotjarId, hotjarVersion } from "@/config/config.env";
+import { adoptWebsiteId, googleAnalyticsId, hotjarId, hotjarVersion } from "@/config/config.env";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,6 +48,17 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <link rel="icon" href="/img/favicon/favicon.ico" />
+        {/* Adopt Tracking Code */}
+        {adoptWebsiteId && (
+          <>
+            <meta name="adopt-website-id" content={adoptWebsiteId} />
+            <Script
+              src={`//tag.goadopt.io/injector.js?website_code=${adoptWebsiteId}`}
+              className="adopt-injector"
+              strategy="afterInteractive"
+            />
+          </>
+        )}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${FrankRuhlLibre.variable} antialiased`}
@@ -58,6 +69,8 @@ export default function RootLayout({
         {googleAnalyticsId && (
           <GoogleAnalytics gaId={googleAnalyticsId || ""} />
         )}
+
+
 
         {/* Hotjar Tracking Code */}
         {hotjarId && hotjarVersion && (

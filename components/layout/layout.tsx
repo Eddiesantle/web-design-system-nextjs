@@ -10,7 +10,7 @@ const NavbarRange = () => {
             <div className='container text-xs mx-auto text-center py-2 px-12 flex flex-col md:flex-row md:justify-between text-sm gap-2'>
                 <div className='flex flex-col  md:flex-row gap-0 md:gap-3 mx-auto md:mx-0'>
                     <div className='flex gap-2'> <Image src="/img/home/icon-whatsapp.svg" alt='icon whatsapp' height={15} width={15} /> (69) 3441-5425</div>
-                    <div className='flex gap-2'> <Image src="/img/home/icon-email.svg" alt='icon email' height={15} width={15} /> administração@brandanicontabilidade.com.br</div>
+                    <div className='flex gap-2'> <Image src="/img/home/icon-email.svg" alt='icon email' height={15} width={15} />adm@brandanicontabilidade.com.br</div>
                 </div>
                 <div className='flex gap-2'>
                     <Image src="/img/home/icon-clock-history.svg" alt='icon clock history' height={15} width={15} />
@@ -20,20 +20,17 @@ const NavbarRange = () => {
 }
 
 const socialLinks = [{
-    href: "Instagram",
-    label: "Instagram"
+    href: "https://www.instagram.com/brandanicontabilidade/",
+    srcIcon: "/img/home/instagram.svg"
 }, {
-    href: "Instagram",
-    label: "LinkedIn"
-}, {
-    href: "Instagram",
-    label: "Facebook"
+    href: "https://www.facebook.com/tupacontabilidade",
+    srcIcon: "/img/home/facebook.svg"
 }]
 
 const contactInfo = {
     phone: "(69) 9.9981-0662",
     whatsapp: "(69) 3441-5425",
-    email: "Administração@brandanicontabilidade.com.br"
+    email: "adm@brandanicontabilidade.com.br"
 }
 
 const section = [{

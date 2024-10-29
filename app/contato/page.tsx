@@ -15,6 +15,8 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import { contact } from "../api/contact";
 
 
 const InfoContact = () => {
@@ -56,27 +58,34 @@ const InfoContact = () => {
         </ContainerDefault>)
 }
 
-type Input = z.infer<typeof contactSchema>;
+type InputContactSchema = z.infer<typeof contactSchema>;
 
 const FormContact = () => {
 
 
-    const form = useForm<Input>({
-        resolver: zodResolver(contactSchema),
-        defaultValues: {
-            name: "",
-            contactPerson: "",
-            email: "",
-            phone: "",
-            message: "",
-            acceptTerms: "",
-        },
+    const form = useForm<InputContactSchema>({
+        resolver: zodResolver(contactSchema)
     });
 
-    function onSubmit(data: Input) {
+    async function onSubmit(data: InputContactSchema) {
 
-        alert(JSON.stringify(data, null, 4));
-        console.log(data);
+        alert('Foi')
+
+        await toast.promise(
+            contact({
+                name: data.name ?? "",
+                contactPerson: data.contactPerson ?? "",
+                email: data.email ?? "",
+                phone: data.phone ?? "",
+                message: data.message ?? "",
+                acceptTerms: data.acceptTerms ?? "",  // ou false, se `acceptTerms` for boolean
+            }),
+            {
+                loading: "Enviando...",
+                success: () => "Enviado com sucesso!",
+                error: () => "Ocorreu um erro ao enviar o formulário",
+            }
+        );
     }
 
 
@@ -285,7 +294,7 @@ const Contato = () => {
         <Layout>
             <InfoContact />
             <GoogleMapContact />
-            <FormContact />
+            {/* <FormContact /> */}
         </Layout>
 
     )
