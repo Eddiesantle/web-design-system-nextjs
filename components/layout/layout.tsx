@@ -11,7 +11,7 @@ const NavbarRange = () => {
             <div className='container text-xs mx-auto text-center py-2 px-12 flex flex-col md:flex-row md:justify-between text-sm gap-2'>
                 <div className='flex flex-col  md:flex-row gap-0 md:gap-3 mx-auto md:mx-0'>
                     <div className='flex gap-2'> <Image src="/img/home/icon-whatsapp.svg" alt='icon whatsapp' height={15} width={15} /> (48) 9823-7366</div>
-                    <div className='flex gap-2'> <Image src="/img/home/icon-email.svg" alt='icon email' height={15} width={15} />nutrimagdasimoni@gmail.com</div>
+                    <div className='flex gap-2'> <Image src="/img/home/icon-email.svg" alt='icon email' height={15} width={15} />simonimagda7@gmail.com</div>
                 </div>
                 <div className='flex gap-2'>
                     <Image src="/img/home/icon-clock-history.svg" alt='icon clock history' height={15} width={15} />
@@ -31,7 +31,7 @@ const socialLinks = [{
 const contactInfo = {
 
     whatsapp: "(48) 9823-7366",
-    email: "nutrimagdasimoni@gmail.com"
+    email: "simonimagda7@gmail.com"
 }
 
 const section = [{
