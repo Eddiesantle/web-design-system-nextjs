@@ -7,7 +7,7 @@ import { ContainerDefault } from '../layout/containerDefault';
 
 interface AboutUsHomeProps {
     title: string;
-    subtitle: string;
+    subtitle: React.JSX.Element;
     description: string;
     features: string[];
     imageSrc: string;
@@ -50,7 +50,9 @@ const ContentSection: React.FC<Omit<AboutUsHomeProps, 'imageSrc' | 'imageAlt'>> 
 }) => (
     <div className='flex text-center md:text-start flex-col gap-6'>
         <div className="text-sm">{title}</div>
-        <div className="text-3xl" dangerouslySetInnerHTML={{ __html: subtitle }} />
+        <div className="text-3xl">
+            {subtitle}
+        </div>
         <div>{description}</div>
         <FeatureList features={features} />
         <ActionButtons />
@@ -77,8 +79,8 @@ const FeatureList: React.FC<{ features: string[] }> = ({ features }) => (
 
 const ActionButtons: React.FC = () => (
     <div className='flex flex-col md:flex-row gap-3 mt-4'>
-        <Link href="/sobre" className={buttonVariants({ variant: "secondary", size: 'lg' })}>Sobre a Brandini</Link>
-        <Link href="/contato" className={buttonVariants({ variant: "outline", size: 'lg' })}>Preciso de um contador</Link>
+        <Link href="/#" className={buttonVariants({ variant: "secondary", size: 'lg' })}>Saiba mais sobre min</Link>
+        <Link href="/#" className={buttonVariants({ variant: "outline", size: 'lg' })}>Agendar Consulta</Link>
     </div>
 );
 

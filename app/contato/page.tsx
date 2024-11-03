@@ -1,9 +1,13 @@
-'use client'
 import { ContainerDefault } from "@/components/layout/containerDefault";
 import { Layout } from "@/components/layout/layout";
 import Image from "next/image";
-import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
-import { useMemo } from "react";
+import FormContact from "@/components/ui/FormContact";
+import { Metadata } from "next";
+import GoogleMapContact from "@/components/ui/googleMapContact";
+
+export const metadata: Metadata = {
+    title: "Brandani Contabilidade | Contato",
+}
 
 const InfoContact = () => {
     return (
@@ -23,7 +27,7 @@ const InfoContact = () => {
                             <div className="w-[155px] md:w-full gap-2 ">
                                 <div className="text-lg">Endereço</div>
                                 <div>RONDÔNIA</div>
-                                <div>Av. Mal. Rondon, 2679 - Princesa Isabel, Cacoal Cep: 78976-065</div>
+                                <div>Av. Mal. Rondon, 2679 - Princesa Isabel, Cacoal Cep: 76.964-091</div>
                             </div>
                         </div>
                         <div className="flex  md:flex-col flex-row gap-3">
@@ -32,8 +36,8 @@ const InfoContact = () => {
                             </div>
                             <div className="w-[155px] md:w-full gap-2">
                                 <div className="text-lg">Contato</div>
-                                <div>(69) 9.9981-0662</div>
-                                <div>Ivandro@brandanicontabilidade.com.br</div>
+                                <div>(69) 3441-5425</div>
+                                <div>adm@brandanicontabilidade.com.br</div>
                             </div>
                         </div>
 
@@ -44,57 +48,7 @@ const InfoContact = () => {
         </ContainerDefault>)
 }
 
-const GoogleMapContact = () => {
 
-
-    const mapCenter = useMemo(
-        () => ({ lat: -11.437819271631763, lng: -61.44394655091605 }),
-        []
-    );
-
-    const mapCenterMarket = useMemo(
-        () => ({ lat: -11.437819271631763, lng: -61.44394655091605 }),
-        []
-    );
-
-    const mapOptions = useMemo<google.maps.MapOptions>(
-        () => ({
-
-
-        }),
-        []
-    );
-
-    const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
-        version: 'quarterly'
-    });
-
-    if (!isLoaded) {
-        return <p>Loading...</p>;
-    }
-
-    return (
-        <ContainerDefault>
-            <div className="justify-center">
-                <div className="w-full mx-auto">
-                    <GoogleMap
-                        options={mapOptions}
-                        zoom={15}
-                        center={mapCenter}
-                        mapTypeId={google.maps.MapTypeId.ROADMAP}
-                        mapContainerStyle={{ width: '100%', height: '461px' }}
-                        onLoad={() => console.log('Map Component Loaded...')}
-                    >
-                        {/* Adicionando o marcador */}
-                        <Marker position={mapCenterMarket} />
-                    </GoogleMap>
-                </div>
-            </div>
-        </ContainerDefault>
-
-    );
-}
 
 const Contato = () => {
 
@@ -102,7 +56,7 @@ const Contato = () => {
         <Layout>
             <InfoContact />
             <GoogleMapContact />
-            {/* <FormContact /> */}
+            <FormContact />
         </Layout>
 
     )

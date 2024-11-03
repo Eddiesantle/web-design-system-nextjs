@@ -9,7 +9,7 @@ interface SocialLink {
 }
 
 interface ContactInfo {
-    phone: string;
+    phone?: string;
     whatsapp: string;
     email: string;
 }
@@ -77,7 +77,6 @@ const CompanyInfo: React.FC<{
             ))}
         </div>
         <div className="flex flex-col">
-            <p>Telefone: {contactInfo.phone}</p>
             <p>Whatsapp: {contactInfo.whatsapp}</p>
             <p>Email: {contactInfo.email}</p>
         </div>
@@ -85,7 +84,7 @@ const CompanyInfo: React.FC<{
 );
 
 const FooterLinks: React.FC<FooterSection> = ({ title, links }) => (
-    <div>
+    <div className='text-center md:text-start'>
         <h4 className="text-lg mb-4">{title}</h4>
         <ul className="space-y-2">
             {links.map((link, index) => (

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 interface ContentsServicesProps {
     name: string;
-    about: string;
+    about: React.JSX.Element;
     details: string;
     srcImage: string;
     order?: string;
@@ -60,10 +60,10 @@ const TextSection: React.FC<Omit<ContentsServicesProps, 'srcImage'>> = ({
 }) => (
     <div className={`flex flex-col justify-center text-center md:text-left gap-6 lg:w-[360px] ${order && "mx-auto"}`}>
         <p className="text-sm">{name}</p>
-        <div className="text-2xl md:text-3xl" dangerouslySetInnerHTML={{ __html: about }} />
+        <div className="text-2xl md:text-3xl">{about}</div>
         <p className="text-md">{details}</p>
         <div className='flex flex-col md:flex-row gap-3 mt-4'>
-            <Link href={link} className={buttonVariants({ variant: "tertiary", size: 'lg' })}>Saber mais</Link>
+            <Link href={link} className={buttonVariants({ variant: "secondary", size: 'lg' })}>Saber mais</Link>
         </div>
 
     </div>

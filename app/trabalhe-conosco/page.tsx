@@ -2,16 +2,17 @@
 import { ContainerDefault } from "@/components/layout/containerDefault";
 import { Layout } from "@/components/layout/layout";
 import Image from "next/image";
-
-
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { contactJobSchema } from "@/validators/contact-job";
+import { ContactJobSchema, ContactJobSchemaType } from "@/validators/contact-job";
+import { CheckboxWithLabel } from "@/components/ui/checkboxWithLabel";
+import toast from "react-hot-toast";
+import { useState } from "react";
+import { InputFile } from "@/components/ui/inputFile";
 
 
 const InfoContact = () => {
@@ -54,26 +55,60 @@ const InfoContactTermos = () => {
 }
 
 
-type Input = z.infer<typeof contactJobSchema>;
-
 const FormContact = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
 
-    const form = useForm<Input>({
-        resolver: zodResolver(contactJobSchema),
+
+    const form = useForm<ContactJobSchemaType>({
+        resolver: zodResolver(ContactJobSchema),
         defaultValues: {
             name: "",
             email: "",
             phone: "",
-            upload: "",
-            acceptTerms: "",
+            file: undefined,
+            acceptTerms: false,
         },
     });
 
-    function onSubmit(data: Input) {
+    async function onSubmit(data: ContactJobSchemaType) {
 
-        alert(JSON.stringify(data, null, 4));
-        console.log(data);
+        console.log('form', form.setError)
+
+        setIsSubmitting(true);
+        const { name, email, phone, file } = data
+
+        const toastId = toast.loading('Enviando sua mensagem...');
+
+        try {
+
+            // Crie um FormData para enviar dados como multipart/form-data
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+
+            // Adiciona o arquivo ao FormData se ele existir
+            if (file) {
+                formData.append('file', file, file.name);
+            }
+
+            const res = await fetch('api/contact-job', {
+                method: 'POST',
+                body: formData
+            })
+
+            if (res.ok) {
+                toast.success('Mensagem enviada com sucesso!', { id: toastId });
+                form.reset();  // Limpar formulário após o envio
+            } else {
+                throw new Error('Falha no envio');
+            }
+        } catch (error) {
+            toast.error(`Falha ao enviar a mensagem: ${error}`, { id: toastId });
+        } finally {
+            setIsSubmitting(false);
+        }
     }
 
 
@@ -94,7 +129,7 @@ const FormContact = () => {
                                             name="name"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>Nome completo</FormLabel>
+                                                    <FormLabel required>Nome completo:</FormLabel>
                                                     <FormControl>
                                                         <Input placeholder="Digite seu nome..." {...field} />
                                                     </FormControl>
@@ -110,7 +145,7 @@ const FormContact = () => {
                                             name="email"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>E-mail</FormLabel>
+                                                    <FormLabel required>E-mail:</FormLabel>
                                                     <FormControl>
                                                         <Input placeholder="Digite seu email..." {...field} />
                                                     </FormControl>
@@ -126,7 +161,7 @@ const FormContact = () => {
                                             name="phone"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>Número de telefone</FormLabel>
+                                                    <FormLabel required>Número de telefone:</FormLabel>
                                                     <FormControl>
                                                         <Input placeholder="Digite seu celular..." {...field} />
                                                     </FormControl>
@@ -139,12 +174,18 @@ const FormContact = () => {
                                         {/* Upload */}
                                         <FormField
                                             control={form.control}
-                                            name="upload"
+                                            name="file"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>Faça o upload do seu Curriculo</FormLabel>
+                                                    <FormLabel>Faça o upload do seu Curriculo:</FormLabel>
                                                     <FormControl>
-                                                        <Input placeholder="Digite seu celular..." {...field} />
+                                                        <InputFile
+                                                            accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+                                                            onChange={(e) => {
+                                                                const file = e.target.files?.[0];
+                                                                field.onChange(file); // Passa o arquivo para o formulário
+                                                            }}
+                                                        />
                                                     </FormControl>
                                                     <FormMessage />
                                                 </FormItem>
@@ -156,21 +197,29 @@ const FormContact = () => {
 
                                 <div className="flex flex-col gap-4">
                                     <div className="flex items-center">
-                                        <input
-                                            type="checkbox"
+                                        <FormField
+                                            control={form.control}
                                             name="acceptTerms"
-                                            id="acceptTerms"
-                                            className="h-4 w-4 border-gray-300 rounded"
-                                            required
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <div className="flex items-center">
+                                                        <FormControl>
+                                                            <CheckboxWithLabel checked={field.value}
+                                                                onChange={(checked) => field.onChange(checked)} />
+                                                        </FormControl>
+                                                        <FormLabel required>Eu aceito os <Link href="/termos-de-uso" target="_blank" className="underline text-blue-600">termos e condições</Link></FormLabel>
+                                                    </div>
+
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )}
                                         />
-                                        <label htmlFor="acceptTerms" className="ml-2 block text-sm">
-                                            Eu aceito os <a href="#" className="text-blue-600 underline">termos e condições</a>
-                                        </label>
                                     </div>
                                     <div>
                                         <Button
                                             type="submit"
                                             variant={"default"}
+                                            disabled={isSubmitting}  // Desabilita o botão enquanto o formulário é enviado
                                         >
                                             Enviar Curriculo
                                         </Button>

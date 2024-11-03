@@ -4,6 +4,8 @@ import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import { adoptWebsiteId, googleAnalyticsId, hotjarId, hotjarVersion } from "@/config/config.env";
+import WhatsappButton from "@/components/ui/whatsappButton";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,16 +28,10 @@ const FrankRuhlLibre = localFont({
 
 
 export const metadata: Metadata = {
-  title: "Web Design System",
-  description: "Um sistema de design moderno para construção de websites e aplicações web responsivas com Next.js.",
-  icons: {
-    icon: '/img/favicon/favicon.ico', // Caminho para o favicon no diretório /public
-  },
-  openGraph: {
-    title: 'Web Design System',
-    locale: 'pt-BR',
-    description: 'O Web Design System oferece uma base sólida de componentes reutilizáveis e boas práticas para criar interfaces de usuário modernas, acessíveis e escaláveis em Next.js.',
-  },
+  title: "Magda Simoni Nutricionista - Emagrecimento, Saúde Digestiva e Autoimunidade",
+  description: "Magda Simoni, nutricionista especializada em emagrecimento consciente, doenças autoimunes e disfunções gastrointestinais. Cuide da sua saúde com uma abordagem integral e personalizada.",
+  keywords: "Magda Simoni nutricionista, emagrecimento consciente, saúde digestiva, doenças autoimunes, nutrição personalizada, bem-estar, autocuidado, saúde intestinal, consulta de nutrição, dieta saudável, Santa Catarina",
+
 };
 
 
@@ -47,6 +43,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <link rel="icon" href="/img/favicon/favicon.ico" />
         {/* Adopt Tracking Code */}
         {adoptWebsiteId && (
@@ -70,7 +69,7 @@ export default function RootLayout({
           <GoogleAnalytics gaId={googleAnalyticsId || ""} />
         )}
 
-
+        <WhatsappButton />
 
         {/* Hotjar Tracking Code */}
         {hotjarId && hotjarVersion && (

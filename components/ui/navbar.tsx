@@ -10,6 +10,7 @@ import { CaretDownIcon } from '@radix-ui/react-icons';
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+import { buttonVariants } from './button';
 
 // Define the types for the Link component
 interface CustomLinkProps extends LinkProps {
@@ -69,7 +70,7 @@ const Navbar = () => {
         <div className='flex items-center w-full md:w-auto'>
           {/* Logo à esquerda */}
           <div className="flex items-center">
-            <Link href="/home"><Image src="/img/home/logo-default.webp" alt="Logo Cliente" width={248} height={73} className="mx-auto md:mx-0" /></Link>
+            <Link href="/"><Image src="/img/home/logo-cor.png" alt="Logo Cliente" width={348} height={73} className="mx-auto md:mx-0" /></Link>
           </div>
 
           {/* Menu Hambúrguer no mobile e menu normal no desktop */}
@@ -88,7 +89,7 @@ const Navbar = () => {
         <NavigationMenu.Root className={`navbar-menu flex gap-10 items-center mt-2 ${isOpen ? 'block' : 'hidden'} z-40 md:flex`}>
           <NavigationMenu.List className="navbar-menu text-black flex flex-col md:flex-row gap-6 md:gap-10 items-center">
             <NavigationMenu.Item>
-              <LinkItem href="/home">Inicio</LinkItem>
+              <LinkItem href="/">Inicio</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
               <LinkItem href="/sobre">Sobre</LinkItem>
@@ -100,22 +101,14 @@ const Navbar = () => {
                 <NavigationMenu.Content className="NavigationMenuContent bg-[#F8F8F8] mt-12 rounded-lg">
                   <ul className="List one">
                     <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3 mt-3'>
-                      <div className="text-lg text-secondary">Contabilidade</div>
                       <LinkItem href="/servicos/contabilidade#rural" >
-                        Contabilidade Rural
+                        Emagrecimento Consciente
                       </LinkItem>
                       <LinkItem href="/servicos/contabilidade#empresarial" >
-                        Contabilidade Empresarial
+                        Doenças Autoimunes
                       </LinkItem>
-
-                    </li>
-                    <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3 mt-3'>
-                      <div className="text-lg text-secondary">Planejamento</div>
-                      <LinkItem href="/servicos/planejamento#tributario" >
-                        Planejamento Tributário
-                      </LinkItem>
-                      <LinkItem href="/servicos/planejamento#sucessorio" >
-                        Planejamento Sucessório
+                      <LinkItem href="/servicos/contabilidade#empresarial" >
+                        Disfunção Gastrointestinal
                       </LinkItem>
 
                     </li>
@@ -125,39 +118,13 @@ const Navbar = () => {
               </NavigationMenu.Trigger>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <NavigationMenu.Trigger className=' flex flex-row gap-1 items-center justify-center  w-[100%] text-center md:text-start w-[350px] md:w-full'>
-
-                <span className='hover:text-secondary'>Portal Online</span>  <CaretDownIcon className="CaretDown" aria-hidden />
-                <NavigationMenu.Content className="NavigationMenuContent bg-[#F8F8F8] mt-12 rounded-lg">
-                  <ul className="List two">
-                    <li style={{ gridRow: 'span 4' }} className='flex flex-col gap-3 mt-3'>
-                      <div className="text-lg text-secondary">Acessar</div>
-
-                      <Link href="https://onvio.com.br/clientcenter/pt/auth?r=%2Fhome" target='_blank' >
-                        Portal do Cliente
-                      </Link>
-                      <Link href="https://passport.nibo.com.br/account/login" target='_blank' >
-                        Área do Empresa
-                      </Link>
-                      <Link href="https://contador.nibo.com.br/User/LogOn" target='_blank' >
-                        Área da Contador
-                      </Link>
-
-
-
-                    </li>
-                  </ul>
-                </NavigationMenu.Content>
-              </NavigationMenu.Trigger>
+              <LinkItem href="/links-uteis">Depoimentos</LinkItem>
             </NavigationMenu.Item>
-            <NavigationMenu.Item>
-              <LinkItem href="/links-uteis">Links Úteis</LinkItem>
-            </NavigationMenu.Item>
-            {/* <NavigationMenu.Item>
-              <LinkItem href="/trabalhe-conosco">Trabalhe Conosco</LinkItem>
-            </NavigationMenu.Item> */}
             <NavigationMenu.Item>
               <LinkItem href="/contato">Contato</LinkItem>
+            </NavigationMenu.Item>
+            <NavigationMenu.Item>
+              <Link href="https://onvio.com.br/clientcenter/pt/auth?r=%2Fhome" target='_blank' className={buttonVariants({ variant: "secondary", size: 'lg' })}>Agendar Consulta</Link>
             </NavigationMenu.Item>
 
           </NavigationMenu.List>

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const contactSchema = z.object({
+export const ContactSchema = z.object({
     email: z
         .string()
         .email({ message: "Insira um endereço de e-mail válido." }),
@@ -17,8 +17,10 @@ export const contactSchema = z.object({
         .regex(/^\+?\d{10,15}$/, { message: "Insira um número de telefone válido com o código do país." }),
     message: z
         .string()
-        .max(1000, { message: "A mensagem não deve exceder 1000 caracteres." }),
+        .max(1000, { message: "A mensagem não deve exceder 1000 caracteres." }).optional(),
     acceptTerms: z
         .boolean({ invalid_type_error: "É necessário aceitar os termos para continuar." })
         .refine(val => val === true, { message: "Você deve aceitar os termos para enviar o formulário." }),
 });
+
+export type ContactSchemaType = z.infer<typeof ContactSchema>;

@@ -1,5 +1,6 @@
-import { contact } from "@/app/api/contact";
-import { contactSchema } from "@/validators/contact";
+"use client";
+
+import { ContactSchema, ContactSchemaType } from "@/validators/contact";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -10,38 +11,124 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Textarea } from "./textarea";
 import Link from "next/link";
 import { Button } from "./button";
-import { z } from "zod";
+import { CheckboxWithLabel } from "./checkboxWithLabel";
 
-type InputContactSchema = z.infer<typeof contactSchema>;
+import { useState } from "react";
+import { siteMailReciever } from "@/config/config.env";
+import { sendMail } from "@/app/lib/send-mail";
+
 
 const FormContact = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
 
-    const form = useForm<InputContactSchema>({
-        resolver: zodResolver(contactSchema)
+    const form = useForm<ContactSchemaType>({
+        resolver: zodResolver(ContactSchema),
+        defaultValues: {
+            email: "",
+            name: "",
+            contactPerson: "",
+            phone: "",
+            message: "",
+            acceptTerms: false,
+        },
     });
 
-    async function onSubmit(data: InputContactSchema) {
+    async function onSubmit(data: ContactSchemaType) {
+        setIsSubmitting(true);
+        const { name, email, phone, contactPerson, message } = data
 
-        alert('Foi')
+        const mailContentsTemplate = `
+        <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;width:100%;max-width:620px;color:#333;font-family:Arial, sans-serif;">
+        <tbody>
+            <tr>
+                <td style="padding:0;margin:0;font-size:1px;height:1px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="padding:0;margin:0;">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td style="padding:15px;background-color:#0D4259;text-align:center;font-size:24px;font-weight:bold;color:#fff;">
+                                    Novo Contato - Solicitação de Informações
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="width:100%;padding:20px;background-color:#ffffff;">
+                        <tbody>
+                            <tr>
+                                <td style="font-size:16px;color:#333;line-height:1.6;">
+                                    <p style="margin:0 0 15px;">
+                                        Olá, Equipe Brandani,
+                                    </p>
+                                    <p style="margin:0 0 20px;">
+                                        Recebemos uma nova mensagem de contato com solicitação de informações. Seguem os detalhes do solicitante:
+                                    </p>
+                                    <p style="margin:10px 0;">
+                                        <strong>Nome:</strong> ${name}
+                                    </p>
+                                    <p style="margin:10px 0;">
+                                        <strong>Email:</strong> <a href="mailto:${email}" style="color:#0066cc;text-decoration:none;">${email}</a>
+                                    </p>
+                                    <p style="margin:10px 0;">
+                                        <strong>Telefone:</strong> ${phone}
+                                    </p>
+                                    <p style="margin:10px 0;">
+                                        <strong>Setor de Interesse:</strong> ${contactPerson}
+                                    </p>
+                                    <p style="margin:10px 0;">
+                                        <strong>Mensagem:</strong><br />
+                                        <span style="color:#555;">${message}</span>
+                                    </p>
+                                    <p style="margin:20px 0 0;color:#777;font-size:14px;">
+                                        Caso necessitem de mais informações, não hesitem em entrar em contato com o solicitante.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="width:100%;padding:15px;text-align:center;background-color:#f8f8f8;">
+                        <tbody>
+                            <tr>
+                                <td style="font-size:12px;color:#aaa;">
+                                    Esta mensagem foi enviada através do formulário de contato do site.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:0;margin:0;font-size:1px;height:1px;">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+        `;
 
-        await toast.promise(
-            contact({
-                name: data.name ?? "",
-                contactPerson: data.contactPerson ?? "",
-                email: data.email ?? "",
-                phone: data.phone ?? "",
-                message: data.message ?? "",
-                acceptTerms: data.acceptTerms ?? "",  // ou false, se `acceptTerms` for boolean
-            }),
-            {
-                loading: "Enviando...",
-                success: () => "Enviado com sucesso!",
-                error: () => "Ocorreu um erro ao enviar o formulário",
+        const toastId = toast.loading('Enviando sua mensagem...');
+
+        try {
+            const response = await sendMail({
+                email: "no-reply@upwins.com.br",
+                sendTo: siteMailReciever,
+                subject: 'Contato Website - Brandani Contabilidade',
+                text: "Contato Website - Brandani Contabilidade",
+                html: mailContentsTemplate,
+            });
+
+            if (response?.messageId) {
+                toast.success('Mensagem enviada com sucesso!', { id: toastId });
+                form.reset();  // Limpar formulário após o envio
+            } else {
+                throw new Error('Falha no envio');
             }
-        );
+        } catch (error) {
+            toast.error(`Falha ao enviar a mensagem. ${error}`, { id: toastId });
+        } finally {
+            setIsSubmitting(false);
+        }
     }
-
 
     return (
         <ContainerDefault>
@@ -57,13 +144,13 @@ const FormContact = () => {
                             <form onSubmit={form.handleSubmit(onSubmit)} className="w-full grid gap-4">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                                     <div>
-                                        {/* name */}
+
                                         <FormField
                                             control={form.control}
                                             name="name"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>Nome completo</FormLabel>
+                                                    <FormLabel required>Nome completo</FormLabel>
                                                     <FormControl>
                                                         <Input placeholder="Digite seu nome..." {...field} />
                                                     </FormControl>
@@ -73,7 +160,7 @@ const FormContact = () => {
                                         />
                                     </div>
                                     <div>
-                                        {/* contactPerson */}
+
                                         <FormField
                                             control={form.control}
                                             name="contactPerson"
@@ -105,13 +192,13 @@ const FormContact = () => {
                                         />
                                     </div>
                                     <div>
-                                        {/* email */}
+
                                         <FormField
                                             control={form.control}
                                             name="email"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>Email</FormLabel>
+                                                    <FormLabel required>E-mail</FormLabel>
                                                     <FormControl>
                                                         <Input placeholder="Digite seu email..." {...field} />
                                                     </FormControl>
@@ -121,13 +208,13 @@ const FormContact = () => {
                                         />
                                     </div>
                                     <div>
-                                        {/* Telefone */}
+
                                         <FormField
                                             control={form.control}
                                             name="phone"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>Número de telefone</FormLabel>
+                                                    <FormLabel required>Número de telefone</FormLabel>
                                                     <FormControl>
                                                         <Input placeholder="Digite seu celular..." {...field} />
                                                     </FormControl>
@@ -140,7 +227,7 @@ const FormContact = () => {
 
 
                                 <div>
-                                    {/* message */}
+
                                     <FormField
                                         control={form.control}
                                         name="message"
@@ -155,23 +242,31 @@ const FormContact = () => {
                                         )}
                                     />
                                 </div>
-                                <div className="flex flex-col md:flex-row gap-3 justify-between">
+                                <div className="flex flex-col md:flex-row gap-6 text-center md:justify-between">
                                     <div className="flex items-center">
-                                        <input
-                                            type="checkbox"
+                                        <FormField
+                                            control={form.control}
                                             name="acceptTerms"
-                                            id="acceptTerms"
-                                            className="h-4 w-4 border-gray-300 rounded"
-                                            required
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <div className="flex items-center">
+                                                        <FormControl>
+                                                            <CheckboxWithLabel checked={field.value}
+                                                                onChange={(checked) => field.onChange(checked)} />
+                                                        </FormControl>
+                                                        <FormLabel required>Eu aceito os <Link href="/termos-de-uso" target="_blank" className="underline text-blue-600">termos e condições</Link></FormLabel>
+                                                    </div>
+
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )}
                                         />
-                                        <label htmlFor="acceptTerms" className="ml-2 block text-sm">
-                                            Eu aceito os <Link href="/termos-de-uso" className="text-blue-600 underline">termos e condições</Link>
-                                        </label>
                                     </div>
                                     <div>
                                         <Button
                                             type="submit"
                                             variant={"secondary"}
+                                            disabled={isSubmitting}  // Desabilita o botão enquanto o formulário é enviado
                                         >
                                             Preciso de um contador
                                         </Button>

@@ -29,13 +29,12 @@ const AboutOurServices: React.FC<AboutOurServicesProps> = ({ services }) => {
 
 const Header: React.FC = () => (
     <div className='flex flex-col space-y-4 mb-8'>
-        <h2 className="text-secondary">SIMPLIFICAMOS SUA CONTABILIDADE</h2>
-        <p className="mb-10 text-3xl">Nossos <span className='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)] '>Serviços</span></p>
+        <p className="mb-10 text-3xl">Minhas <span className='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)] '>Especialidades</span></p>
     </div>
 );
 
 const ServiceGrid: React.FC<AboutOurServicesProps> = ({ services }) => (
-    <div className="relative md:h-[130px] lg:w-[800px] mx-auto">
+    <div className="relative md:h-[130px]  mx-auto">
         <div className='md:absolute grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8'>
             {services.map((service, index) => (
                 <ServiceCard key={index} {...service} />
@@ -47,12 +46,12 @@ const ServiceGrid: React.FC<AboutOurServicesProps> = ({ services }) => (
 const ServiceCard: React.FC<Service> = ({ imageUrl, postUrl, title, description }) => (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden py-6">
         <Link href={postUrl}>
-            <div className='border bg-[#0060AD] rounded-full w-[80px] h-[80px] flex items-center mx-auto'>
+            <div className='border bg-secondary rounded-full w-[80px] h-[80px] flex items-center mx-auto'>
                 <Image
                     src={imageUrl}
                     alt={description}
-                    width={56}
-                    height={56}
+                    width={0}
+                    height={0}
                     className="object-cover mx-auto p-1"
                 />
             </div>
