@@ -14,7 +14,7 @@ interface AboutAdvancedTechnologyProps {
 
 const AboutAdvancedTechnology: React.FC<AboutAdvancedTechnologyProps> = ({ services }) => {
     return (
-        <div className="bg-[#EAEAEA] text-white py-12 md:pt-[50px] md:mb-[100px]">
+        <div className="bg-[#EAEAEA] text-gray-500 py-12 md:pt-[50px] md:mb-[100px]">
             <ContainerDefault>
                 <div className="mx-auto text-center">
                     <Header />
@@ -26,9 +26,9 @@ const AboutAdvancedTechnology: React.FC<AboutAdvancedTechnologyProps> = ({ servi
 };
 
 const Header: React.FC = () => (
-    <div className='flex flex-col space-y-4 '>
-        <p className="mb-10 text-4xl"><span className='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Tecnologias médicas</span></p>
-        <div className='text-black mb-8 text-lg'>
+    <div className='flex flex-col space-y-4 mb-6'>
+        <p className="mb-10 text-4xl"><span className='text-primary font-semibold font-[family-name:var(--font-geist-sans)]'>Tecnologias médicas</span></p>
+        <div className='font-semibold text-lg'>
             Métodos avançados para avaliar <br />
             as características metabólicas de cada paciente.
         </div>
@@ -47,7 +47,7 @@ const ServiceGrid: React.FC<AboutAdvancedTechnologyProps> = ({ services }) => (
 
 const ServiceCard: React.FC<Service> = ({ imageUrl, title, description }) => (
     <div className="py-6">
-        <div className='border bg-primary rounded-full w-[100px] h-[100px] flex items-center mx-auto'>
+        <div className='border bg-tertiary rounded-full w-[100px] h-[100px] flex items-center mx-auto'>
             <Image
                 src={imageUrl}
                 alt={description}
@@ -57,8 +57,8 @@ const ServiceCard: React.FC<Service> = ({ imageUrl, title, description }) => (
             />
         </div>
         <div className="flex flex-col gap-4 p-4 ">
-            <p className="text-gray-600 font-semibold mb-4 text-xl">{title}</p>
-            <p className="text-gray-600">{description}</p>
+            <p className="font-semibold mb-4 text-xl">{title}</p>
+            <p>{description}</p>
         </div>
     </div>
 );

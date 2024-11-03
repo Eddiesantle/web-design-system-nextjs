@@ -43,7 +43,7 @@ const Feedback: React.FC<FeedbackProps> = ({ testimonials }) => {
 const FeedbackDescription: React.FC = () => (
     <div className="md:col-span-1 text-black">
         <p className="text-sm uppercase tracking-wider ">Histórias de Sucesso</p>
-        <h3 className="text-3xl  mt-2 mb-4">Depoimentos de <span className="text-secondary  font-semibold font-[family-name:var(--font-frank-ruhl-libre)]">Pacientes</span></h3>
+        <h3 className="text-3xl  mt-2 mb-4">Depoimentos de <span className="text-secondary  font-semibold font-[family-name:var(--font-geist-sans)]">Pacientes</span></h3>
         <p className="leading-relaxed">
             Os resultados falam por si! Veja o que os meus pacientes dizem sobre as transformações que experimentaram após adotarem um estilo de vida mais saudável e equilibrado.
         </p>

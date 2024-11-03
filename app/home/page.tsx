@@ -2,30 +2,59 @@ import { Layout } from '@/components/layout/layout';
 import Feedback from '@/components/one-page/feedback';
 import AboutAdvancedTechnology from '@/components/ui/aboutAdvancedTechnology';
 import AboutOurServices from '@/components/ui/aboutOurServices';
+import AboutOurTreatment from '@/components/ui/aboutOurTreatment';
 import AboutUsHome from '@/components/ui/aboutUsHome';
 import BannerHome from '@/components/ui/bannerHome';
 import BriefContentServices from '@/components/ui/briefContentServices';
 import React from 'react';
 
-const services = [
+const mockServices = [
     {
-        imageUrl: '/img/home/icons8-contabilidade-100.webp',
+        imageUrl: '/img/home/icon-diet.png',
         postUrl: '/#',
         title: 'Emagrecimento Consciente',
         description: 'Reduza medidas de forma sustentável, respeitando o seu corpo e promovendo a saúde. Nada de dietas radicais, apenas mudanças graduais que você realmente consegue manter.'
     },
     {
-        imageUrl: '/img/home/icons8-imposto-96.webp',
+        imageUrl: '/img/home/icon-virus-minimize.png',
         postUrl: '/#',
         title: 'Doenças Autoimunes',
         description: 'Trabalhando com foco no controle dos sintomas e na prevenção de crises, priorizando alimentos que fortalecem o sistema imunológico e ajudam a equilibrar o corpo.'
     },
     {
-        imageUrl: '/img/home/icons8-companhia-64.webp',
+        imageUrl: '/img/home/icon-stomachache.png',
         postUrl: '/#',
         title: 'Disfunção Gastrointestinal',
         description: 'Cuide da sua saúde digestiva com estratégias nutricionais que promovem o equilíbrio do organismo, ajudando na redução de desconfortos e no aumento da qualidade de vida.'
     },
+    // ... more services
+];
+
+const mockTreatment = [
+    {
+        title: 'Avaliação Alimentar',
+        description: 'Conhecer seus hábitos, preferências e restrições alimentares. Realizamos uma análise completa dos seus hábitos alimentares, considerando horários, locais de alimentação, preferências e restrições alimentares. Também avaliamos o histórico familiar de doenças, uso de medicamentos e exames laboratoriais, que poderão ser solicitados se necessário.'
+    },
+    {
+        title: 'Avaliação Antropométrica',
+        description: 'Entender a composição corporal para estabelecer metas realistas. Nesta etapa, medimos seu peso e altura para calcular o IMC (Índice de Massa Corporal) e analisamos as circunferências corporais (braço, cintura e quadril). Utilizamos a balança de bioimpedância para identificar o percentual de gordura corporal, compondo uma visão abrangente de sua condição física.'
+    },
+    {
+        title: 'Estabelecimento de Metas e Objetivos',
+        description: 'Definir um plano de ação alinhado ao seu ideal de saúde. Com os dados das avaliações, determinamos a faixa de peso ideal e a composição corporal desejada. Juntos, traçamos metas claras e realistas que guiarão nosso trabalho nutricional, de acordo com suas necessidades e objetivos pessoais.'
+    },
+    {
+        title: 'Proposta de Reeducação Alimentar',
+        description: 'Promover mudanças saudáveis e duradouras. Esta fase envolve um processo de reeducação gradual, incentivando a abandonar hábitos alimentares indesejáveis e a incorporar condutas mais saudáveis. Com isso, buscamos que as mudanças sejam duradouras, garantindo uma alimentação equilibrada e sustentável.'
+    },
+    {
+        title: 'Elaboração do Plano Alimentar Personalizado',
+        description: 'Criar uma alimentação saudável e prazerosa, respeitando suas preferências. Desenvolvemos um plano alimentar ajustado às suas necessidades, idade, condições fisiológicas e preferências. Os planos são individualizados, variados e flexíveis, para que você possa adotar uma alimentação saudável sem abrir mão dos alimentos que mais gosta.'
+    },
+    {
+        title: 'Acompanhamento e Ajustes Periódicos',
+        description: 'Monitorar o progresso e fazer ajustes conforme necessário. O acompanhamento contínuo é essencial para garantir que o plano esteja funcionando como esperado. Realizamos sessões regulares para avaliar o progresso, responder dúvidas, ajustar o plano e apoiar a sua evolução, mantendo a motivação ao longo do caminho.'
+    }
     // ... more services
 ];
 
@@ -101,7 +130,7 @@ const testimonials = [
     },
 ];
 
-const aboutUsHomeFeatures = ['Bem-estar físico', 'Mental', 'Espiritual']
+const aboutUsHomeFeatures = ['Bem-estar Físico', 'Mental', 'Espiritual']
 
 export default function Home() {
     return (
@@ -111,37 +140,40 @@ export default function Home() {
 
             <AboutUsHome title='Oi! Eu sou a' subtitle={
                 <>
-                    Nutricionista <br /> <span className='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Magda Simoni</span>
+                    Nutricionista <br /> <span className='text-secondary font-semibold font-[family-name:var(--font-geist-sans)]'>Magda Simoni</span>
                 </>
-            } description='Sempre acreditei na nutrição como o caminho para a cura e o bem-estar. Muito além de pesos e medidas, a nutrição é uma jornada de autoconhecimento e equilíbrio. A saúde é o reflexo dos nossos hábitos e da maneira como cuidamos de nós mesmos. Cada pequena escolha que fazemos nos aproxima de uma vida mais plena, com mais energia e vitalidade.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/foto-perfil.jpg' />
+            } description='Sempre acreditei na nutrição como o caminho para a cura e o bem-estar. Muito além de pesos e medidas, a nutrição é uma jornada de autoconhecimento e equilíbrio. Cada pequena escolha que fazemos nos aproxima de uma vida mais plena, com mais energia e vitalidade.' features={aboutUsHomeFeatures} imageAlt='defaultt' imageSrc='/img/home/foto-perfil.jpg' />
 
-            <AboutOurServices services={services} />
+            <AboutOurServices services={mockServices} />
+
 
 
 
 
             <BriefContentServices name='Investir em Você é Construir um Futuro Mais Saudável' about={
                 <>
-                    Transforme pequenas escolhas de hoje em<br /> <span className='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'> conquistas de amanhã</span>  <br />
+                    Transforme pequenas <br /> escolhas de hoje em<br /> <span className='text-tertiary font-semibold font-[family-name:var(--font-geist-sans)]'> conquistas de amanhã</span>  <br />
                 </>
-            } details='Nossa saúde reflete nossos hábitos diários. A cada passo dado em direção a uma alimentação equilibrada e consciente, estamos construindo um futuro de bem-estar físico, mental e espiritual. Acredite no poder das pequenas mudanças, pois elas são o caminho para as grandes transformações.' srcImage='/img/home/healthy-meal-and-happy-people.png' link='/#' />
+            } details='Nossa saúde reflete nossos hábitos diários. A cada passo dado em direção a uma alimentação equilibrada e consciente, estamos construindo um futuro de bem-estar físico, mental e espiritual. Acredite no poder das pequenas mudanças, pois elas são o caminho para as grandes transformações.' srcImage='/img/home/cute-little-girl-her-beautiful-parents-are-cutting-vegetables-kitchen-home.jpg' link='/#' />
 
             <AboutAdvancedTechnology services={mockAboutAdvancedTechnology} />
 
             {/* <BgEthicalConduct
                 title="EFICIÊNCIA EM TODAS AS ETAPAS"
-                subtitle="Conduta <span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>& Ética</span>"
+                subtitle="Conduta <span class='text-secondary font-semibold font-[family-name:var(--font-geist-sans)]'>& Ética</span>"
                 description="A Brandani Contabilidade, preza por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los."
                 imageSrc="/img/home/tres-pessoas-sorrindo-etica.webp"
                 imageAlt="Ethical conduct illustration"
                 buttonText="Acessar Portal"
             /> */}
 
-            <BriefContentServices name='Investir em Você é Construir um Futuro Mais Saudável' about={
+            <BriefContentServices name='Transforme Seu Prato, Transforme Sua Vida!' about={
                 <>
-                    Transforme pequenas escolhas de hoje em<br /> <span className='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'> conquistas de amanhã</span>  <br />
+                    O Poder da  Nutrição <br /> para uma <span className='text-tertiary font-semibold font-[family-name:var(--font-geist-sans)]'>  Mente Saudável</span>
                 </>
-            } details='Nossa saúde reflete nossos hábitos diários. A cada passo dado em direção a uma alimentação equilibrada e consciente, estamos construindo um futuro de bem-estar físico, mental e espiritual. Acredite no poder das pequenas mudanças, pois elas são o caminho para as grandes transformações.' srcImage='/img/home/healthy-meal-and-happy-people.png' link='/#' />
+            } details='Nossa alimentação vai além da nutrição física — ela cuida também da nossa mente. O que colocamos no prato tem um impacto direto sobre nosso humor, memória e disposição. Escolhas alimentares saudáveis e conscientes são passos essenciais para uma mente equilibrada e feliz.' details2='Descubra como a nutrição adequada pode ajudar você a alcançar um bem-estar físico e mental duradouro. Vamos juntos nessa jornada?' srcImage='/img/home/world-health-day-celebration-with-healthy-food.jpg' link='/#' order />
+
+            <AboutOurTreatment services={mockTreatment} />
 
             {/* Como adicionar um Feed do Instagram na sua aplicação React - https://www.youtube.com/watch?v=WaMzfDN66MU */}
             {/* <LatestInstagramPosts /> */}

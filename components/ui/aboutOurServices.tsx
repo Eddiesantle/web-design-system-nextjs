@@ -29,7 +29,7 @@ const AboutOurServices: React.FC<AboutOurServicesProps> = ({ services }) => {
 
 const Header: React.FC = () => (
     <div className='flex flex-col space-y-4 mb-8'>
-        <p className="mb-10 text-3xl">Minhas <span className='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)] '>Especialidades</span></p>
+        <p className="mb-10 text-3xl">Minhas <span className='text-secondary font-semibold font-[family-name:var(--font-geist-sans)] '>Especialidades</span></p>
     </div>
 );
 
@@ -50,13 +50,13 @@ const ServiceCard: React.FC<Service> = ({ imageUrl, postUrl, title, description 
                 <Image
                     src={imageUrl}
                     alt={description}
-                    width={0}
-                    height={0}
+                    width={60}
+                    height={60}
                     className="object-cover mx-auto p-1"
                 />
             </div>
             <div className="flex flex-col gap-4 p-4 ">
-                <p className="text-gray-600 font-semibold text-secondary mb-4">{title}</p>
+                <p className="text-gray-600 font-semibold text-secondary mb-4 font-[family-name:var(--font-geist-sans)] text-lg">{title}</p>
                 <p className="text-gray-600">{description}</p>
             </div>
         </Link>

@@ -34,7 +34,7 @@ const AboutUs = () => {
                     </div>
                     <div className='flex flex-col gap-6 lg:w-[330px] text-center md:text-start'>
                         <div className="text-sm">BRANDANI CONTABILIDADE</div>
-                        <div className="text-3xl"><span className="text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]">Sobre</span><br /> Nosso Escritório</div>
+                        <div className="text-3xl"><span className="text-secondary font-semibold font-[family-name:var(--font-geist-sans)]">Sobre</span><br /> Nosso Escritório</div>
                         <div className='md:hidden block justify-center md:justify-start'>
                             <Image
                                 className="rounded-lg md:h-[380px]"
@@ -155,7 +155,7 @@ export default function Sobre() {
         <Layout>
             <AboutUs />
             <InformationCountsAdvantages stats={stats} />
-            <ContentsSevices about={`<span class='text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]'>Nossa</span> Missão,<br> Visão e Valores`} details='O código de conduta e ética da empresa, é uma orientação para que todos os colaboradores tomem decisões baseadas nos valores que a empresa compartilha, reduzindo o risco de interpretações subjetivas quanto aos aspectos morais, éticos e legais concernentes às relações de trabalho.' srcImage='/img/home/homem-sentado-notebook.webp' order />
+            <ContentsSevices about={`<span class='text-secondary font-semibold font-[family-name:var(--font-geist-sans)]'>Nossa</span> Missão,<br> Visão e Valores`} details='O código de conduta e ética da empresa, é uma orientação para que todos os colaboradores tomem decisões baseadas nos valores que a empresa compartilha, reduzindo o risco de interpretações subjetivas quanto aos aspectos morais, éticos e legais concernentes às relações de trabalho.' srcImage='/img/home/homem-sentado-notebook.webp' order />
             <MissionVisionPrinciples missionVisionPrinciplesProps={missionVisionPrinciplesMock} />
             <ContentsSevices details='A Brandani Contabilidade conduz suas atividades e negócios conforme os padrões éticos, respeitando as leis e normas aplicáveis, incluindo, sem limitação, normas de saúde e segurança, legislação trabalhista e fiscal, sendo esta uma prerrogativa de atuação para os seus colaboradores e parceiros.' srcImage='/img/home/mesa-reuniao-pessoas.webp' />
             <ContentsSevices details='Prezamos por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los.' srcImage='/img/home/dashboard-analise.webp' buttonLink="/contato" buttonLabel="Preciso de um contador" order />

@@ -40,7 +40,7 @@ const LinksUteis = () => {
     return (
         <Layout>
             <ContainerDefault>
-                <h1 className="text-3xl pt-14">Links <span className="text-secondary font-semibold font-[family-name:var(--font-frank-ruhl-libre)]">Úteis</span></h1>
+                <h1 className="text-3xl pt-14">Links <span className="text-secondary font-semibold font-[family-name:var(--font-geist-sans)]">Úteis</span></h1>
                 <BoxLinks />
             </ContainerDefault>
         </Layout>

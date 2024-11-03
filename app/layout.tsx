@@ -69,7 +69,7 @@ export default function RootLayout({
           <GoogleAnalytics gaId={googleAnalyticsId || ""} />
         )}
 
-        <WhatsappButton />
+        <WhatsappButton whatsappNumber="+554898237366" message="Olá! Acessei o site da Dra. Magda Simoni e gostaria de agendar uma consulta." />
 
         {/* Hotjar Tracking Code */}
         {hotjarId && hotjarVersion && (

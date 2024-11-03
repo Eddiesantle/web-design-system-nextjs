@@ -101,13 +101,13 @@ const Navbar = () => {
                 <NavigationMenu.Content className="NavigationMenuContent bg-[#F8F8F8] mt-12 rounded-lg">
                   <ul className="List one">
                     <li style={{ gridRow: 'span 3' }} className='flex flex-col gap-3 mt-3'>
-                      <LinkItem href="/servicos/contabilidade#rural" >
+                      <LinkItem href="/#" >
                         Emagrecimento Consciente
                       </LinkItem>
-                      <LinkItem href="/servicos/contabilidade#empresarial" >
+                      <LinkItem href="/#" >
                         Doenças Autoimunes
                       </LinkItem>
-                      <LinkItem href="/servicos/contabilidade#empresarial" >
+                      <LinkItem href="/#" >
                         Disfunção Gastrointestinal
                       </LinkItem>
 
@@ -118,13 +118,17 @@ const Navbar = () => {
               </NavigationMenu.Trigger>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <LinkItem href="/links-uteis">Depoimentos</LinkItem>
+              <LinkItem href="/#">Como Funciona</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <LinkItem href="/contato">Contato</LinkItem>
+              <LinkItem href="/#">Depoimentos</LinkItem>
             </NavigationMenu.Item>
             <NavigationMenu.Item>
-              <Link href="https://onvio.com.br/clientcenter/pt/auth?r=%2Fhome" target='_blank' className={buttonVariants({ variant: "secondary", size: 'lg' })}>Agendar Consulta</Link>
+              <LinkItem href="/#">Contato</LinkItem>
+            </NavigationMenu.Item>
+
+            <NavigationMenu.Item>
+              <Link href="https://wa.me/+554898237366?text=Olá! Acessei o site da Dra. Magda Simoni e gostaria de agendar uma consulta." target='_blank' className={buttonVariants({ variant: "secondary", size: 'lg' })}>Agendar Consulta</Link>
             </NavigationMenu.Item>
 
           </NavigationMenu.List>

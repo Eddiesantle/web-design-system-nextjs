@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
 
+type WhatsappButtonProps = {
+    whatsappNumber: string;
+    message: string;
+};
 
-const WhatsappButton = () => {
-    const whatsappNumber = '5599999999'; // Coloque o número de WhatsApp no formato internacional
-    const message = 'Olá, gostaria de mais informações!'; // Mensagem inicial
-
+const WhatsappButton = ({ message, whatsappNumber }: WhatsappButtonProps) => {
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     return (

@@ -29,7 +29,7 @@ const InformationCountsAdvantages: React.FC<InformationCountsAdvantagesProps> = 
 const StatDisplay: React.FC<StatItem> = ({ title, value, subtitle }) => (
     <div className="flex flex-col text-center md:w-[150px]">
         {title && <div className="text-sm">{title}</div>}
-        <div className="text-3xl font-semibold font-[family-name:var(--font-frank-ruhl-libre)]">{value}</div>
+        <div className="text-3xl font-semibold font-[family-name:var(--font-geist-sans)]">{value}</div>
         {subtitle && <div className="text-sm">{subtitle}</div>}
     </div>
 );
