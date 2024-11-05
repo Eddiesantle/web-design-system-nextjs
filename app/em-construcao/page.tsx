@@ -50,8 +50,8 @@ const Rodape = () => {
                     <a href="tel:+554898237366" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
                         <span><Image src="/img/em-construcao/icon-whatsapp-azul.png" alt="logo" width={15} height={5} /></span>  <span>48 9823-7366</span>
                     </a>
-                    <a href="mailto:nutrimagdasimoni@gmail.com" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
-                        <span><Image src="/img/em-construcao/icon-email-azul.png" alt="logo" width={15} height={45} /></span> <span>nutrimagdasimoni@gmail.com</span>
+                    <a href="mailto:simonimagda7@gmail.com" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
+                        <span><Image src="/img/em-construcao/icon-email-azul.png" alt="logo" width={15} height={45} /></span> <span>simonimagda7@gmail.com</span>
                     </a>
                     <a href="https://www.instagram.com/nutrimagdasimoni/" target="_blank" rel="noopener noreferrer" className="flex  items-center space-x-2">
                         <span><Image src="/img/em-construcao/icon-instagram-azul.png" alt="logo" width={15} height={5} /></span>  <span>@nutrimagdasimoni</span>

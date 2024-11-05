@@ -19,7 +19,7 @@ const BannerHome = () => {
                     <div className="grid md:col-start-2 md:col-span-6 md:grid-cols-2 w-full mx-auto gap-8">
                         <div className="flex flex-col gap-4">
                             <div className="text-sm flex gap-1 items-center">
-                                <div> CRN-3: 28101</div>
+                                <div>CRN10 11098</div>
                             </div>
                             <h1 className="text-5xl">
                                 <>Nutricionista <br /> <span className="text-secondary font-semibold font-[family-name:var(--font-geist-sans)]">Magda Simoni</span></>
