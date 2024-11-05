@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import { ContainerDefault } from "../layout/containerDefault";
+import { ContainerDefault } from "../layout/ContainerDefault";
 import Image from "next/image";
 
 interface Testimonial {

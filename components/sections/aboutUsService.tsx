@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { ContainerDefault } from '../layout/containerDefault';
+import { ContainerDefault } from '../layout/ContainerDefault';
 import Link from 'next/link';
-import { buttonVariants } from './button';
+import { buttonVariants } from '../ui/Button';
 
 interface AboutUsServiceProps {
     id?: string

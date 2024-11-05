@@ -1,11 +1,12 @@
-import { Layout } from '@/components/layout/layout';
-import Feedback from '@/components/one-page/feedback';
-import AboutAdvancedTechnology from '@/components/ui/aboutAdvancedTechnology';
-import AboutOurServices from '@/components/ui/aboutOurServices';
-import AboutOurTreatment from '@/components/ui/aboutOurTreatment';
-import AboutUsHome from '@/components/ui/aboutUsHome';
-import BannerHome from '@/components/ui/bannerHome';
-import BriefContentServices from '@/components/ui/briefContentServices';
+
+import { Layout } from '@/components/layout/Layout';
+import AboutAdvancedTechnology from '@/components/sections/AboutAdvancedTechnology';
+import AboutOurServices from '@/components/sections/AboutOurServices';
+import AboutOurTreatment from '@/components/sections/AboutOurTreatment';
+import AboutUsHome from '@/components/sections/AboutUsHome';
+import BannerHome from '@/components/sections/BannerHome';
+import BriefContentServices from '@/components/sections/BriefContentServices';
+import Feedback from '@/components/sections/Feedback';
 import React from 'react';
 
 const mockServices = [
@@ -146,10 +147,6 @@ export default function Home() {
 
             <AboutOurServices services={mockServices} />
 
-
-
-
-
             <BriefContentServices name='Investir em Você é Construir um Futuro Mais Saudável' about={
                 <>
                     Transforme pequenas <br /> escolhas de hoje em<br /> <span className='text-tertiary font-semibold font-[family-name:var(--font-geist-sans)]'> conquistas de amanhã</span>  <br />
@@ -158,14 +155,6 @@ export default function Home() {
 
             <AboutAdvancedTechnology services={mockAboutAdvancedTechnology} />
 
-            {/* <BgEthicalConduct
-                title="EFICIÊNCIA EM TODAS AS ETAPAS"
-                subtitle="Conduta <span class='text-secondary font-semibold font-[family-name:var(--font-geist-sans)]'>& Ética</span>"
-                description="A Brandani Contabilidade, preza por desempenhar com eficiência, presteza e atenção, as atribuições de sua função, objetivando melhores resultados e solicitando, se necessário, instruções e esclarecimentos para atingi-los."
-                imageSrc="/img/home/tres-pessoas-sorrindo-etica.webp"
-                imageAlt="Ethical conduct illustration"
-                buttonText="Acessar Portal"
-            /> */}
 
             <BriefContentServices name='Transforme Seu Prato, Transforme Sua Vida!' about={
                 <>

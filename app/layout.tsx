@@ -4,7 +4,7 @@ import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import { adoptWebsiteId, googleAnalyticsId, hotjarId, hotjarVersion } from "@/config/config.env";
-import WhatsappButton from "@/components/ui/whatsappButton";
+import WhatsappButton from "@/components/ui/WhatsappButton";
 
 
 const geistSans = localFont({

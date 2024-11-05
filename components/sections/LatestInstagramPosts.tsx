@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContainerDefault } from '../layout/containerDefault';
+import { ContainerDefault } from '../layout/ContainerDefault';
 
 const LatestInstagramPosts = () => {
     return (

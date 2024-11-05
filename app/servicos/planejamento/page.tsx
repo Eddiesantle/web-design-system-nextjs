@@ -1,7 +1,8 @@
-import { Layout } from "@/components/layout/layout";
-import AboutUsService from "@/components/ui/aboutUsService";
-import LatestInstagramPosts from "@/components/ui/latestInstagramPosts";
-import ServicesOffered from "@/components/ui/servicesOffered";
+
+import { Layout } from "@/components/layout/Layout";
+import LatestInstagramPosts from "@/components/sections/LatestInstagramPosts";
+import ServicesOffered from "@/components/sections/ServicesOffered";
+import AboutUsService from "@/components/sections/aboutUsService";
 
 const servicesPlanejamentoTributarioMock = [
     { icon: "/img/home/check-verified.svg", description: "Análise e simulação de regimes tributários" },

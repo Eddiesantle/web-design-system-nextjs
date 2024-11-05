@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/button';
-import { ContainerDefault } from '../layout/containerDefault';
+import { ContainerDefault } from '../layout/ContainerDefault';
+import { buttonVariants } from '../ui/Button';
 
 
 interface AboutUsHomeProps {

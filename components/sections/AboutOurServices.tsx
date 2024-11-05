@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ContainerDefault } from '../layout/containerDefault';
+import { ContainerDefault } from '../layout/ContainerDefault';
 
 interface Service {
     imageUrl: string;

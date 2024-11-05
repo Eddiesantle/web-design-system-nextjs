@@ -1,5 +1,6 @@
-import { ContainerDefault } from "@/components/layout/containerDefault";
-import { Layout } from "@/components/layout/layout";
+import { ContainerDefault } from "@/components/layout/ContainerDefault";
+import { Layout } from "@/components/layout/Layout";
+
 
 export default function TermosDeUso() {
     return (

@@ -1,7 +1,7 @@
 // components/Layout.tsx
 import React from 'react';
-import Navbar from '../ui/navbar';
-import Footer from '../ui/footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import Image from 'next/image';
 import { Toaster } from 'react-hot-toast';
 

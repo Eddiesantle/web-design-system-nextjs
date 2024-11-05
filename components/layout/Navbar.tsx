@@ -10,7 +10,7 @@ import { CaretDownIcon } from '@radix-ui/react-icons';
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { buttonVariants } from './button';
+import { buttonVariants } from '../ui/Button';
 
 // Define the types for the Link component
 interface CustomLinkProps extends LinkProps {

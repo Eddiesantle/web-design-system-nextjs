@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 
-import { ContainerDefault } from "../layout/containerDefault";
-import { buttonVariants } from "./button";
+import { ContainerDefault } from "../layout/ContainerDefault";
+import { buttonVariants } from "../ui/Button";
 import Image from "next/image";
 
 

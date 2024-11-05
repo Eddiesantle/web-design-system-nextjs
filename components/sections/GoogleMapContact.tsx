@@ -1,7 +1,7 @@
 "use client";
 
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-import { ContainerDefault } from "../layout/containerDefault";
+import { ContainerDefault } from "../layout/ContainerDefault";
 import { googleMapsApiKey } from "@/config/config.env";
 import { useMemo } from "react";
 

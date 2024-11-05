@@ -1,9 +1,8 @@
 // app/page.tsx
 
-import Temporizador from "@/components/em-construcao/temporizador/Temporizador";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-import { buttonVariants } from "@/components/ui/button";
+import Temporizador from "@/components/sections/Temporizador";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
+import { buttonVariants } from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,9 +13,11 @@ const EntreEmContato = () => {
             <div className="font-medium">Te ajudo a conquistar saúde plena!</div>
             <div>
                 Agende aqui suas consultas presenciais e on-line ⤵️</div>
-            <Link target="_blank" href="https://api.whatsapp.com/send?phone=4898237366&text=Olá, gostaria de saber mais sobre o trabalho da Nutri Magda Simoni" className={buttonVariants({ variant: "default", size: 'lg' })}>
-                <Image src="/img/em-construcao/icon-whatsapp.png" alt="logo" className="mr-2" width={20} height={20} /> Agendar uma consulta
-            </Link>
+            <div>
+                <Link target="_blank" href="https://api.whatsapp.com/send?phone=4898237366&text=Olá, gostaria de saber mais sobre o trabalho da Nutri Magda Simoni" className={buttonVariants({ variant: "default", size: 'lg' })}>
+                    <Image src="/img/em-construcao/icon-whatsapp.png" alt="logo" className="mr-2" width={20} height={20} /> Agendar uma consulta
+                </Link>
+            </div>
         </div>
     );
 };

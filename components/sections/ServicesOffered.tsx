@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { ContainerDefault } from '../layout/containerDefault';
+import { ContainerDefault } from '../layout/ContainerDefault';
 
 
 interface ServiceItem {

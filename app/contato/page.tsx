@@ -1,9 +1,9 @@
-import { ContainerDefault } from "@/components/layout/containerDefault";
-import { Layout } from "@/components/layout/layout";
 import Image from "next/image";
-import FormContact from "@/components/ui/FormContact";
 import { Metadata } from "next";
-import GoogleMapContact from "@/components/ui/googleMapContact";
+import { ContainerDefault } from "@/components/layout/ContainerDefault";
+import { Layout } from "@/components/layout/Layout";
+import GoogleMapContact from "@/components/sections/GoogleMapContact";
+import FormContact from "@/components/form/FormContact";
 
 export const metadata: Metadata = {
     title: "Brandani Contabilidade | Contato",
